@@ -1,0 +1,9 @@
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { width:1200px; margin: 0 auto; text-align: center; border:1px solid red;};
+header { border:1px solid red;}
+footer { border:1px solid red; clear: both; }
+nav { border:1px solid red;}
+section { float:left; width:900px; height: 500px; text-align: center; }
+article { border:1px solid red; }
+aside { float: left; background-color:rgb(248, 189, 166); width :150px; height: 500px };
