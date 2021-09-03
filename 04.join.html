@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href='./css/main02.css?ver=1'>
+  <title>join</title>
+</head>
+
+<body style="background-color: #ddd;">
+  <div style="background-color: white; margin:0 auto; width: 60%; ">
+    <h1 class="align-center color-white weight300">회원 정보 입력</h1>
+    <table>
+      <form enctype="multipart/form-data" action="infos.html" method="post" autocomplete="on">
+        <colgroup>
+          <col style="width: 24%">
+          <col style="width: 24%">
+          <col style="width: 17%;">
+          <col style="width: 33%;">
+        </colgroup>
+
+        <!--text / password-->
+        <tr>
+          <td class="align-right"><label for="id">아이디:</label> </td>
+          <td><input class="w100 input-id " type="text" id="id" name="id" placeholder="id" value="" autofocus
+              required /><button class="button pf10 pr10 mf10">중복확인</button></td>
+          <td class="align-right"><label for="name">회원 이름:</label> </td>
+          <td><input class="w100" type="text" id="name" name="name" placeholder="name" value="" autofocus required />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="pwd">비밀번호:</label> </td>
+          <td><input type="password" id="pwd" name="pwd" placeholder="password" value="" autofocus required /></td>
+          <td class="align-right"><label for="mail">메일주소: </label></td>
+          <td><input type="email" id="mail" name="mail" multiple /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="tel">전화번호(유효검사 미실시)</label></td>
+          <td>
+            <!-- <input type="tel" id="tel" name="tel" placeholder="010-1234-1234" title="입력양식:010-1234-1234" required/> -->
+            <input type="text" name="tel1" size="3" maxlength="3" value="010" class="input-tel">
+            - <input type="text" name="tel2" size="4" maxlength="4" class="input-tel">
+            - <input type="text" name="tel3" size="4" maxlength="4" class="input-tel">
+          </td>
+          <td class="align-right"><label for="job">직업: </label></td>
+          <td>
+            <select id="job" size="1" name="job">
+              <option selected> 학생 </option>
+              <option> 회사원 </option>
+              <option> 프로그래머 </option>
+              <option> 무직 </option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="nick">선택사항:</label></td>
+          <td colspan="3">
+            <!--field set legend 태그 그룹핑-->
+            <!--radio-->
+            <fieldset class="pa15 float-left">
+              <legend>성별</legend>
+              <input class="default-input" type="radio" id="female" name="gender" value="여자" checked />
+              <label class="mr10" for="female">여자</label>
+              <input class="default-input" type="radio" id="male" name="gender" value="남자" />
+              <label class="mr10" for="male">남자</label>
+              <input class="default-input" type="radio" id="other" name="gender" value="기재안함" />
+              <label for="male">기재 안함</label>
+            </fieldset>
+            <!--checkbox-->
+            <fieldset class="pa15 mf10 float-left">
+              <legend>취미</legend>
+              <input type="checkbox" id="reading" name="hobby" value="reading" checked />
+              <label class="mr5" for="reading">독서</label>
+              <input type="checkbox" id="game" name="hobby" value="game" />
+              <label class="mr5" for="game">게임</label>
+              <input type="checkbox" id="movie" name="hobby" value="movie" />
+              <label class="mr5" for="movie">영화</label>
+              <input type="checkbox" id="soccer" name="hobby" value="soccer" />
+              <label for="soccer">축구</label><br />
+            </fieldset>
+          </td>
+        </tr>
+
+        <tr>
+          <!--date / month / week / time / datetime-local-->
+          <td class="align-right"><label for="date">회원가입 일자: </label></td>
+          <td><input type="date" id="date" name="date" /></td>
+          <!--textarea 태그 <textarea wrap="soft|hard"> soft 기본값으로, 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈하지 않음.
+                      hard 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈함. 단, hard 속성값을 사용할 경우에는 반드시 cols 속성이 명시되어 있어야 함. -->
+          <td class="align-right"><label for="request">자기 소개서 작성: </label></td>
+          <td><textarea id="textarea1" name="textarea1" rows="5" cols="30%"
+              placeholder="자기를 소개하는 글을 남겨 주세요."></textarea></td>
+        </tr>
+
+        <tr>
+          <td colspan="4" class="align-center">
+            <button class="mt40 mb40 pr20 pf20 pt5 pb5 mr20 button" type="submit">제출</button>
+            <button class="pr20 pf20 pt5 pb5 reset" type="reset">취소</button>
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <br />
+
+    <h1 class="align-center color-white weight300">output 요소</h1>
+    <table>
+      <tr>
+        <td class="align-center">
+          <form oninput="out.value=(parseInt(a.value)*parseInt(b.value))">
+            (<input type="number" name="a" min="1" max="10" value="3" class="output pa5" />
+            *
+            <input type="number" name="b" min="1" max="100" value="22" class="output pa5" />)
+            = <output name="out" for="a b" class="output pa5"></output>
+          </form>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <h1 class="align-center color-white weight300">그외 여러 요소</h1>
+    <table>
+      <form enctype="multipart/form-data" action="infos.html" method="post" autocomplete="on">
+        <colgroup>
+          <col style="width: 20%">
+          <col style="width: 28%">
+          <col style="width: 24%;">
+          <col style="width: 28%;">
+        </colgroup>
+
+        <!--text / password-->
+        <tr>
+          <td><label for="id">아이디:</label> </td>
+          <td><input class="w100" type="text" id="id" name="id" placeholder="id" value="" autofocus required /></td>
+          <td><label for="pwd">비밀번호:</label> </td>
+          <td><input type="password" id="pwd" name="pwd" placeholder="password" value="" autofocus required /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="nick">닉네임:</label></td>
+          <td><input type="text" id="nick" name="nick" placeholder="nick name" value="" autofocus autocomplete="on" />
+          </td>
+          <!--file / image-->
+          <!--multiple -> 이미지 파일 여러파일선택-->
+          <td class="align-right"><label for="nick">파일전송:</label></td>
+          <td><input type="file" accept="image/*" multiple></td>
+        </tr>
+
+        <tr>
+          <!--field set legend 태그 그룹핑-->
+          <!--radio-->
+          <td class="align-right"><label for="nick">선택사항:</label></td>
+          <td colspan="3">
+            <fieldset class="pt10 pb15 pf20 pr20 mr20" style="float: left;">
+              <legend>성별</legend>
+              <input class="default-input" type="radio" id="female" name="gender" value="여자" checked />
+              <label class="mr10" for="female">여자</label>
+              <input class="default-input" type="radio" id="male" name="gender" value="남자" />
+              <label class="mr10" for="male">남자</label>
+              <input class="default-input" type="radio" id="other" name="gender" value="기재안함" />
+              <label class="mr10" for="male">기재 안함</label>
+            </fieldset>
+            <fieldset class="pt10 pb15 pf20 pr20" style="float: left;">
+              <legend>학년</legend>
+              <input class="default-input" type="radio" id="1grade" name="grade" value="1학년" checked />
+              <label class="mr10" for="female">1학년</label>
+              <input class="default-input" type="radio" id="2grade" name="grade" value="2학년" />
+              <label class="mr10" for="male">2학년</label>
+              <input class="default-input" type="radio" id="3grade" name="grade" value="3학년" />
+              <label class="mr10" for="male">3학년</label>
+              <input class="default-input" type="radio" id="4grade" name="grade" value="4학년" />
+              <label class="mr10" for="male">4학년</label>
+            </fieldset>
+            <!--checkbox-->
+            <fieldset class="pt10 pb15 pf20 pr20" style="float: left;">
+              <legend>좋아하는 과일</legend>
+              <input class="default-input" type="checkbox" id="apple" name="fruit" value="사과" checked />
+              <label class="mr10" for="apple">사과</label>
+              <input class="default-input" type="checkbox" id="orange" name="fruit" value="오랜지" />
+              <label class="mr10" for="apple">오랜지</label>
+              <input class="default-input" type="checkbox" id="mango" name="fruit" value="망고" />
+              <label class="mr10" for="apple">망고</label>
+              <input class="default-input" type="checkbox" id="berry" name="fruit" value="딸기" />
+              <label for="apple">딸기</label><br />
+            </fieldset>
+          </td>
+        </tr>
+
+        <tr>
+          <!--search tel-->
+          <td class="align-right"><label for="search">검색</label></td>
+          <td><input type="search" id="search" name="search" placeholder="네트워크" /></td>
+          <!--tel 유효성검사 미실시-->
+          <td class="align-right"><label for="tel">전화번호(유효검사 미실시)</label></td>
+          <td><input type="tel" id="tel" name="tel" placeholder="010-1234-1234" title="입력양식:010-1234-1234" required />
+          </td>
+        </tr>
+
+        <tr>
+          <!--정규식 https://www.w3schools.com/jsref/jsref_obj_regexp.asp-->
+          <!--정규식 테스트 https://regexr.com/-->
+          <td class="align-right"><label for="phone">전화번호: </label></td>
+          <td><input type="tel" id="phone" name="phone" pattern="/^\d{2,3}-\d{3,4}-\d{4}$/" /></td>
+          <td class="align-right"><label for="jumin">주민번호: </label></td>
+          <td><input type="tel" id="jumin" name="jumin"
+              pattern="\d{2}([0]\d|[1][0-2])([0][1-9]|[1-2]\d|[3][0-1])[-]*[1-4]\d{6}" /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="enName">영문이름: </label></td>
+          <td><input type="text" id="enName" name="enName" pattern="[a-zA-Z]{4,10}" title="4자리에서 10자리 영대소문자" /></td>
+          <!--url / email 유효성검사 자동실시-->
+          <td class="align-right"><label for="url">URL기재: </label></td>
+          <td><input type="url" id="url" name="url" multiple placeholder="http://www.knou.ac.kr" /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="mail">이메일: </label></td>
+          <td><input type="email" id="mail" name="mail" multiple /></td>
+          <!--number / range-->
+          <td class="align-right"><label for="number">단계별 숫자올리기: </label></td>
+          <td><input type="number" id="num" name="num" min="1" max="10" step="0.5" value="1" /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="range">특정범위지정: </label></td>
+          <td><input type="range" id="range" name="range" min="0" max="100" step="5" value="50" /></td>
+          <!--color-->
+          <td class="align-right"><label for="color">색상지정: </label></td>
+          <td><input type="color" id="color" name="color"></td>
+        </tr>
+
+        <!--date / month / week / time / datetime-local-->
+        <tr>
+          <td class="align-right"><label for="date">년,월,일 입력(date): </label></td>
+          <td><input type="date" id="date" name="date" /></td>
+          <td class="align-right"><label for="month">년,월 입력(month): </label></td>
+          <td><input type="month" id="month" name="month" /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right"><label for="week">년,주차 입력(week): </label></td>
+          <td><input type="week" id="week" name="week" /></td>
+          <td class="align-right"><label for="time">시간입력(time): </label></td>
+          <td><input type="time" id="time" name="time" /></td>
+        </tr>
+
+        <tr>
+          <td class="align-right" colspan="2"><label for="datetime-local">지역 시간대 기준 년,월,일,시간(datetime-local): </label>
+          </td>
+          <td colspan="2"><input type="datetime-local" id="datetime-local" name="datetime-local" /></td>
+        </tr>
+
+        <tr>
+          <!--textarea 태그 <textarea wrap="soft|hard"> soft 기본값으로, 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈하지 않음.
+                      hard 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈함. 단, hard 속성값을 사용할 경우에는 반드시 cols 속성이 명시되어 있어야 함. -->
+          <td class="align-right"><label for="request">요청 글: </label></td>
+          <td><textarea id="textarea1" name="textarea1" rows="5" cols="30%" wrap="hard" style="border: none;"
+              placeholder="내용을 기입해 주세요"></textarea></td>
+          <!--select multiple 태그-->
+          <td class="align-right"><label for="animal1">좋아하는 동물1 multiple </label></td>
+          <td>
+            <select id="animal1" name="animal1" multiple size="6">
+              <option value="">선택해주세요</option>
+              <option value="사자" selected>사자</option>
+              <option value="재규어">재규어</option>
+              <option value="블랙팬서" disabled>블랙팬서</option>
+              <option value="곰">곰</option>
+              <option value="사슴">사슴</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <!--select 태그-->
+          <td class="align-right"><label name="anima2" for="animal2">좋아하는 동물2</label></td>
+          <td>
+            <select id="animal2" name="animal2" size="1">
+              <option value="">선택해주세요</option>
+              <option value="사자">사자</option>
+              <option value="재규어">재규어</option>
+              <option value="블랙팬서">블랙팬서</option>
+              <option value="곰">곰</option>
+              <option value="사슴">사슴</option>
+            </select>
+          </td>
+          <!--select grouping -> optgroup 태그-->
+          <td class="align-right"><label for="animal3">좋아하는 동물3 </label></td>
+          <td>
+            <select id="animal3" name="anima3" size="1">
+              <option value="">선택해주세요</option>
+              <optgroup label="고양이과">
+                <option value="사자">사자</option>
+                <option value="재규어">재규어</option>
+                <option value="블랙팬서" disabled>블랙팬서</option>
+              </optgroup>
+              <optgroup label="개과">
+                <option value="개">사자</option>
+                <option value="늑대">재규어</option>
+                <option value="여우">블랙팬서</option>
+              </optgroup>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <!--datalist 태그-->
+          <td class="align-right"><label for="browsers">datalist 태그</label></td>
+          <td>
+            <input type="text" list="browsers">
+            <datalist id="browsers">
+              <option value="인터넷 익스플로러">
+              <option value="엣지">
+              <option value="파이어폭스">
+              <option value="크롬">
+              <option value="오페라">
+              <option value="사파리" disabled>
+            </datalist>
+          </td>
+          <td class="align-right"><label for="datlist">동물의 세계4</label></td>
+          <td>
+            <input type="text" list="divided-animal">
+            <datalist id="divided-animal">
+              <option value="고양이과" label="사자 재규어 표범"></option>
+              <option value="개과" label="개 늑대 여우 너구리"></option>
+              <option value="원숭이과" label="원숭이 침팬지 고랄라"></option>
+              <option value="쥐과" label="다람쥐 바늘두더지 프레리도그" disabled></option>
+            </datalist>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4" class="align-center">
+            <button class="mt40 mb40 pr20 pf20 pt5 pb5 mr20 button" type="submit">제출</button>
+            <button class="pr20 pf20 pt5 pb5 reset" type="reset">취소</button>
+          </td>
+        </tr>
+
+      </form>
+    </table>
+
+    <div class="mt30">
+      <h1 class="align-center color-white weight300">HTML5에서 요소의 변화 : 읽어보세요</h1>
+      <ul class="mt20 align-center">
+        <li> 새롭게 추가된 요소/속성, 지원이 중단된 요소/속성 </li>
+        <li> 적용 의미가 변경된 요소 → b, i, cite, hr, address, s, a, u, strong, small </li>
+      </ul><br />
+
+      <b>물리적 스타일 태그</b><br>
+      <div class="bg-lemon pa15">
+        &lt;b&gt; : <b>진하게 표시 // • 적절한 다른 요소가 없을 때만 사용하는 최후의 수단</b><br />
+        &lt;i&gt; : <i>기울어진 형태(이탤릭체)로 표시 // • 적절한 시멘틱 요소가 없을 경우에 한해서 사용</i><br />
+        &lt;s&gt; : <s>글자 가운데를 통과하는 줄(취소선)을 표시 // • 더 이상 정확하지 않거나 관련이 없는 텍스트</s><br />
+        &lt;u&gt; : <u>밑줄을 표시 // 철자가 틀린 단어나 중국어의 고유명사와 같이 일반 텍스트와 스타일이 다른 텍스트 // • 하이퍼링크와의 혼란 가능성→ 사용 자제</u><br />
+        &lt;small&gt; : 기본 글자의 크기보다 <small>작은 크기의 글자</small>로 표시 // 작게 표시해야 하는 부수적 해설이나 이용 조건 또는 법적 공지 등
+      </div>
+      &lt;sup&gt; : 글자를<sup>위첨자</sup>로 표시<br />
+      &lt;sub&gt; : 글자를<sub>아래첨자</sub>로 표시<br /><br />
+
+      <b>논리적 스타일 태그</b><br>
+      <div class="bg-pink pa15">
+        &lt;cite&gt; : <cite>책, 시, 그림, 영화 등의 작품 제목을 표시 // • 이탤릭체, 인용</cite><br />
+        &lt;strong&gt; : <strong>중요한 내용을 표시 // • 중요한 텍스트</strong><br />
+        &lt;address&gt; : <address>서울시 종로구 // • body 요소 내에서 사용되는 경우 →문서 저자의 정보 // • article 요소 내에서 사용되는 경우→ 해당 기사의 저자 정보
+        </address><br />
+      </div>
+      &lt;code&gt; : <code>컴퓨터 코드를 표시</code><br />
+      &lt;samp&gt; : <samp>프로그램의 샘플 출력을 표시</samp><br />
+      &lt;var&gt; : <var>변수를 표시</var><br />
+      &lt;dfn&gt; : <dfn>용어에 대한 정의를 표시</dfn><br />
+      &lt;em&gt; : <em>강조하는 내용을 표시</em><br />
+      &lt;abbr&gt; : <abbr>축약형을 표시</abbr><br />
+      &lt;kbd&gt; : <kbd>키보드로 입력한 내용임을 표시</kbd><br />
+      &lt;q&gt; : <q>짧은 인용구를 표시</q>
+    </div><br />
+
+    <b>그외</b><br>
+    <div class="bg-peru pa15">
+      &lt;hr&gt; : 수평선 → 페이지 내에서 주제가 변경되어 콘텐츠를 구분하는 의미론적 용도<br />
+      <hr />
+      &lt;a&gt; : <a>하이퍼링크, 앵커 → 항상 하이퍼링크 또는 하이퍼링크 표시자</a><br />
+      • name 속성은 id 속성으로 대체<br />
+      • article 요소 내에서 사용되는 경우→ 해당 기사의 저자 정보<br />
+      • 속성 추가→ download, media 등<br />
+    </div>
+  </div>
+
+</body>
+
+</html>
