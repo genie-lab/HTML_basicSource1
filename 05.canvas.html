@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='./css/main03.css?ver=1'>
+	<script src="./js/main02.js"></script>
+	<title>canvas</title>
+</head>
+<body>
+	<main style="background-color: white;">
+		<!-- <canvas id="yourCanvas" width="500px" height="300px" style="background-color:white" ></canvas> -->
+			<h1 class="mt30 align-center">캔버스 그림 영역 지정 및 객체 생성</h1>
+			<table>
+				<row>
+					<tr>
+						<td>
+							<canvas id="myCanvas"></canvas>
+							<canvas id="drawingRect"></canvas>
+						</td>
+					</tr>
+				</row>
+			</table>
+			<!-- <script>
+			//캔버스 객체생성
+			const canvas = document.getElementById('yourCanvas');
+			//캔버스 컨텍스트 객체 생성
+			const ctx = canvas.getContext('2d'); // const ctx = document.getElementById('yourCanvas').getContext('2d');
+			//실제 그림을 그리는 자바스크립트 코드를 위치시킨다
+			//빨간색으로 텍스트 그리기
+			ctx.font ="16px 굴림체";
+			ctx.fillStyle="red";
+			ctx.fillText('캔버스 맛보기', canvas.width/2-70, canvas.height/2-5);
+			//파란색으로 사각형 그리기
+			ctx.strokeStyle="blue";
+			ctx.strokeRect(70,40,200,100);//가로세로
+		</script> -->
+
+			<h1 class="mt30 align-center">패스 기반의 그리기 메서드</h1>
+			<table>
+				<tr>
+					<td class="pathTd">beginPath()</td>
+					<td>이전의 패스를 모두 지우고 새로운 패스를 그린다.</td>
+				</tr>
+				<tr>
+					<td class="pathTd">closePath()</td>
+					<td>현재 패스를 닫는다.(패스 그리는 것을 종료)</td>
+				</tr>
+				<tr>
+					<td class="pathTd">moveTo(x,y)</td>
+					<td>주어진 점을 시작으로 새로운 서브패스를 만든다.</td>
+				</tr>
+				<tr>
+					<td class="pathTd">lineTo(x,y)</td>
+					<td>바로 이전의 점과 현재의 점을 연결하는 선을 그린다.</td>
+				</tr>
+				<tr>
+					<td class="pathTd">rect(x,y,w,h)</td>
+					<td>사각형을 그린다</td>
+				</tr>
+				<tr>
+					<td class="pathTd">arc(…)</td>
+					<td>원/원호를 그린다.</td>
+				</tr>
+				<tr>
+					<td class="pathTd">stroke()</td>
+					<td>현재 패스에 있는 도형들을 선 스타일로 실제로 캔버스에 출력한다.</td>
+				</tr>
+				<tr>
+					<td class="pathTd">fill()</td>
+					<td>현재 패스에 있는 도형들을 채우기 스타일로 실제로 캔버스에 출력한다.</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<canvas id="drawingPathLine"></canvas>
+						<canvas id="drawingPathPolygon1"></canvas>
+						<canvas id="drawingPathPolygon2"></canvas>
+						<canvas id="drawingPathPolygonFillColor"></canvas>
+					</td>
+				</tr>
+			</table>
+
+			<h1  class="mt30 align-center">원/원호 그리기</h1>
+			<table>
+				<tr>
+					<td class="pathTd" colspan="2">arc(x, y, 반지름, 시작각도, 종료각도, 그리는_방향);</td>
+				</tr>
+				<tr>
+					<td class="pathTd">x, y, 반지름 </td>
+					<td>→ 원의 중심의 좌표와 반지름</td>
+				</tr>
+				<tr>
+					<td class="pathTd">시작각도, 종료각도</td>
+					<td>→ 라디안 단위 사용(360도=2π), → 각도* Math.PI/180</td>
+				</tr>
+				<tr>
+					<td class="pathTd">그리는 방향</td>
+					<td>
+						false → 기본값. 시계방향으로 그리는 경우<br/>
+						true → 시계 반대방향으로 그리는 경우
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath1.PNG"  width="80%" class="mf50"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<canvas id="drawingRound1"></canvas>
+						<canvas id="drawingRound2"></canvas>
+						<canvas id="drawingRound3"></canvas>
+						<canvas id="drawingRound4"></canvas>
+						<canvas id="drawingRound5"></canvas>
+						<canvas id="drawingRound6"></canvas>
+						<canvas id="drawingRound7"></canvas>
+					</td>
+				</tr>
+			</table>
+
+
+			<h1  class="mt30 align-center">직선과 접하는 원호 그리기</h1>
+			<table>
+				<tr>
+					<td class="pathTd" colspan="2">moveTo(x,y) + arcTo(x1, y1, x2, y2, 반지름)</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath2.PNG"  width="80%" class="mf50"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="./img/cavasPath3.PNG"  width="65%" class="mf50"/>
+					</td>
+					<td>
+						<canvas id="drawingLineRadians1" class="mr50"></canvas>
+					</td>
+				</tr>
+
+
+
+			</table>
+			<h1 class="mt30 align-center">베지에 곡선 그리기</h1>
+			<table>
+				<colgroup>
+					<col style="width: 30%">
+          <col style="width: 70%">
+				</colgroup>
+				<tr>
+					<td class="pathTd" colspan="2">베지에 곡선 Bezier Curve</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="align-center">n개의 점으로부터 얻어지는 (n-1)차 곡선</td>
+				</tr>
+				<tr>
+					<td class="pathTd">2차 베지에 곡선</td>
+					<td>• quadraticCurveTo(제어점x, 제어점y, 종료점x, 종료점y)</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath4.PNG"  width="40%" class="mf50 float-left"/>
+						<img src="./img/cavasPath5.PNG"  width="41%" class=" float-left"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath6.PNG"  width="31%" class="mf50 float-left"/>
+						<canvas id="bezierSecond" class="mr50"></canvas>
+					</td>
+				</tr>
+				<tr>
+					<td class="pathTd">3차 베지에 곡선</td>
+					<td>• bezierCurveTo(제어점x1, 제어점y1, 제어점x2, 제어점y2, 종료점x, 종료점y)</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath7.PNG"  width="50%"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img src="./img/cavasPath8.PNG"  width="31%" class="mf50 float-left"/>
+						<canvas id="bezierThird" class="mr50"></canvas>
+					</td>
+				</tr>
+			</table>
+	</main>
+		
+
+</body>
+</html>

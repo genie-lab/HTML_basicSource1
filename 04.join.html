@@ -58,7 +58,7 @@
         </tr>
 
         <tr>
-          <td class="align-right"><label for="nick">선택사항:</label></td>
+          <td class="align-right"><label>선택사항:</label></td>
           <td colspan="3">
             <!--field set legend 태그 그룹핑-->
             <!--radio-->
@@ -148,14 +148,14 @@
           </td>
           <!--file / image-->
           <!--multiple -> 이미지 파일 여러파일선택-->
-          <td class="align-right"><label for="nick">파일전송:</label></td>
-          <td><input type="file" accept="image/*" multiple></td>
+          <td class="align-right"><label for="fileSend">파일전송:</label></td>
+          <td><input id="fileSend" type="file" accept="image/*" multiple></td>
         </tr>
 
         <tr>
           <!--field set legend 태그 그룹핑-->
           <!--radio-->
-          <td class="align-right"><label for="nick">선택사항:</label></td>
+          <td class="align-right"><label for="female">선택사항:</label></td>
           <td colspan="3">
             <fieldset class="pt10 pb15 pf20 pr20 mr20" style="float: left;">
               <legend>성별</legend>
@@ -169,13 +169,13 @@
             <fieldset class="pt10 pb15 pf20 pr20" style="float: left;">
               <legend>학년</legend>
               <input class="default-input" type="radio" id="1grade" name="grade" value="1학년" checked />
-              <label class="mr10" for="female">1학년</label>
+              <label class="mr10" for="1grade">1학년</label>
               <input class="default-input" type="radio" id="2grade" name="grade" value="2학년" />
-              <label class="mr10" for="male">2학년</label>
+              <label class="mr10" for="2grade">2학년</label>
               <input class="default-input" type="radio" id="3grade" name="grade" value="3학년" />
-              <label class="mr10" for="male">3학년</label>
+              <label class="mr10" for="3grade">3학년</label>
               <input class="default-input" type="radio" id="4grade" name="grade" value="4학년" />
-              <label class="mr10" for="male">4학년</label>
+              <label class="mr10" for="4grade">4학년</label>
             </fieldset>
             <!--checkbox-->
             <fieldset class="pt10 pb15 pf20 pr20" style="float: left;">
@@ -183,11 +183,11 @@
               <input class="default-input" type="checkbox" id="apple" name="fruit" value="사과" checked />
               <label class="mr10" for="apple">사과</label>
               <input class="default-input" type="checkbox" id="orange" name="fruit" value="오랜지" />
-              <label class="mr10" for="apple">오랜지</label>
+              <label class="mr10" for="orange">오랜지</label>
               <input class="default-input" type="checkbox" id="mango" name="fruit" value="망고" />
-              <label class="mr10" for="apple">망고</label>
+              <label class="mr10" for="mango">망고</label>
               <input class="default-input" type="checkbox" id="berry" name="fruit" value="딸기" />
-              <label for="apple">딸기</label><br />
+              <label for="berry">딸기</label><br />
             </fieldset>
           </td>
         </tr>
@@ -225,7 +225,7 @@
           <td><input type="email" id="mail" name="mail" multiple /></td>
           <!--number / range-->
           <td class="align-right"><label for="number">단계별 숫자올리기: </label></td>
-          <td><input type="number" id="num" name="num" min="1" max="10" step="0.5" value="1" /></td>
+          <td><input type="number" id="number" name="num" min="1" max="10" step="0.5" value="1" /></td>
         </tr>
 
         <tr>
@@ -260,7 +260,7 @@
         <tr>
           <!--textarea 태그 <textarea wrap="soft|hard"> soft 기본값으로, 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈하지 않음.
                       hard 폼 데이터가 서버로 제출될 때 입력된 텍스트를 줄바꿈함. 단, hard 속성값을 사용할 경우에는 반드시 cols 속성이 명시되어 있어야 함. -->
-          <td class="align-right"><label for="request">요청 글: </label></td>
+          <td class="align-right"><label for="textarea1">요청 글: </label></td>
           <td><textarea id="textarea1" name="textarea1" rows="5" cols="30%" wrap="hard" style="border: none;"
               placeholder="내용을 기입해 주세요"></textarea></td>
           <!--select multiple 태그-->
