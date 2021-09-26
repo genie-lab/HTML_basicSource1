@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='./css/main03.css?ver=1'>
+	<script src="./js/main03.js"></script>
+	<!-- <script src="./js/main03-1.js"></script> -->
+	<title>canvas</title>
+</head>
+<body>
+	<main style="background-color: white;">
+		<!-- <canvas id="yourCanvas" width="500px" height="300px" style="background-color:white" ></canvas> -->
+			<h1 class="mt30 align-center">캔버스2</h1>
+			<table>
+				<colgroup>
+					<col style="width: 30%">
+          <col style="width: 35%">
+          <col style="width: 35%">
+				</colgroup>
+				<row>
+					<tr>
+						<td class="pathTd" colspan="3"> 스타일 지정하기 </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 선 스타일 // 선의 색상(또는 그라데이션, 패턴) 지정 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> lineWidth </td>
+						<td colspan="2"> 선의 두께 지정 (기본 1픽셀) </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> lineJoin [= bevel | round | miter(기본) ] </td>
+						<td> 두 선이 만나 꺽이는 모서리 부분의 모양 지정 </td>
+						<td> <img src="./img/canvas2-0.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> lineCap	[= butt (기본) | round | square]  </td>
+						<td> 선의 양쪽 끝부분의 모양 지정 </td>
+						<td> <img src="./img/canvas2-1.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasLineStyle1"></canvas> </td>
+						<td colspan="2"> <img src="./img/canvas2-2.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> setLineDash() 메서드  </td>
+						<td> 원하는 점선의 패턴을 설정하는 메서드<br/> 
+							인자→ 패턴으로 그려지는 부분과 그려지지 않는 부분이 반복되는 배열<br/> 
+						</td>
+						<td> <img src="./img/canvas2-3.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasLineDash1"></canvas> </td>
+						<td colspan="2"> <img src="./img/canvas2-4.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 채우기 스타일 // stroke() → strokeStyle 속성 vs. fill() → fillStyle 속성 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> fillStyle </td>
+						<td colspan="2">  도형을 채우는 색상이나 스타일 지정 </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasFillStyle1"></canvas> </td>
+						<td colspan="2"> <img src="./img/canvas2-5.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> globalAlpha </td>
+						<td colspan="2"> 색상의 투명도 지정 : 값 → 0.0 (완전 투명) ~ 1.0 (완전 불투명) </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasFillStyle2"></canvas> </td>
+						<td colspan="2"> <img src="./img/canvas2-7.png"  width="80%" class="mf50"/> </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 그라데이션 스타일 // 두 가지 이상의 색상이 점진적으로 변하는 효과 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> createLinearGradient(x1, y1, x2, y2) </td>
+						<td colspan="2">  선형 그라데이션 지정 </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasGradient1"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-8.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-9.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd"> createRadialGradient(x1, y1, r1, x2, y2, r2) </td>
+						<td colspan="2">  방사형 그라데이션 지정 </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasRadialGradient1"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-10.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-11.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd"> addColorStop(오프셋, 색상) </td>
+						<td colspan="2">  오프셋→경계색 위치(시작점 0.0 ~ 끝점 1.0) / 그라데이션 경계색 지정</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasRadialGradient2"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-12.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-13.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						
+					<tr>
+						<td colspan="3" class="pathTd"> 패턴 스타일 // 채우기를 위한 이미지 패턴 생성 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> createPattern( 이미지변수, 반복형식 ) </td>
+						<td colspan="2"> ‘반복형식’의 값 : no-repeat  //  repeat-x //<br/> repeat-y  // repeat(기본값) </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasPattern1"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-14.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-15.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-16.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 그림자 스타일 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> shadowColor </td>
+						<td colspan="2"> 그림자 색상 지정(기본값: 완전 투명한 검은색 rgba(0,0,0,0)) </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> shadowOffsetX </td>
+						<td colspan="2"> 대상을 기준으로 그림자의 수평 오프셋 지정 (기본값: 0) </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> shadowOffsetY </td>
+						<td colspan="2"> 대상을 기준으로 그림자의 수직 오프셋 지정 (기본값: 0) </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> shadowBlur </td>
+						<td colspan="2"> 그림자의 흐림 정도 지정(기본값 : 0) </td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasShadow1"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-17.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-18.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-19.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 도형합성 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> globalCompositeOperation 속성 </td>
+						<td colspan="2"> ctx.globalCompositeOperation = '속성값';<br/>
+								도형이 그려지는 순서에 상관 없이 도형 간의 겹쳐지는 부분에 대한 다양한 처리가 가능 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> 속성 </td>
+						<td colspan="2">
+							→ source-atop, source-in, source-out, source-over (기본값)<br/> 
+							→ destination-atop, destination-in, destination-out, destination-over<br/> 
+							→ lighter, copy, xor<br/> 
+							→ [[ destination : 속성 지정 이전에 먼저 그려진 도형 ]]<br/> 
+							→ [[ source : 속성 지정 이후에 그려진 도형 ]]<br/> 
+						</td>
+					</tr>
+					<tr>
+						<td> 
+							<canvas id="canvasOperation1"></canvas> 
+							<canvas id="canvasOperation2"></canvas> 
+							<canvas id="canvasOperation3"></canvas> 
+							<canvas id="canvasOperation4"></canvas> 
+							
+							<canvas id="canvasOperation5"></canvas> 
+							<canvas id="canvasOperation6"></canvas> 
+							<canvas id="canvasOperation7"></canvas> 
+							<canvas id="canvasOperation8"></canvas> 
+
+							<canvas id="canvasOperation9"></canvas> 
+							<canvas id="canvasOperation10"></canvas> 
+							<canvas id="canvasOperation11"></canvas> 
+						
+						</td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-20.png"  width="100%" /><br/>
+							<hr/>
+							<img src="./img/canvas2-21.png"  width="100%" /><br/>
+							<hr/>
+							<img src="./img/canvas2-22.png"  width="100%" />
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 텍스트 그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> strokeText( 텍스트, x, y [, maxWidth ] ) </td>
+						<td colspan="2"> 
+							• 지정된 위치 (x, y)를 기준으로테두리만 있는텍스트를 그림<br/>
+							• maxWidth →텍스트가 maxWidth의 크기에 맞게 조정되어 그려짐
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">  fillText( 텍스트, x, y [, maxWidth ] ) </td>
+						<td colspan="2">
+							• 지정된 위치 (x, y)를 기준으로색이 채워진텍스트를 그림
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">  변수 = measureText( 텍스트 ) </td>
+						<td colspan="2">
+							• 현재 글꼴에서 주어진 텍스트의 폭을 반환<br/>
+							• 변수.width
+						</td>
+					</tr>
+					<tr>
+						<td> 
+							<canvas id="canvasText1"></canvas> 
+							<canvas id="canvasText2"></canvas> 
+						</td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-23.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas2-24.png"  width="80%" class="mf50"/>
+							<hr/>
+							<img src="./img/canvas2-25.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 텍스트 그리기 관련 속성 </td>
+					</tr>
+					<tr>
+						<td class="pathTd"> font </td>
+						<td colspan="2"> 
+							• 글자 스타일, 글자 크기, 글자체 지정(기본값: "10px sans-serif")<br/>
+							• ctx.font= "italic 15pt 굴림체" 
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd"> textAlign </td>
+						<td colspan="2"> 
+							• 수평 방향의 정렬 방식 지정→ left, right, center, start, end 
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd"> textBaseline </td>
+						<td colspan="2"> 
+							• 텍스트의 수직 방향의 기준선 지정<br/>
+							• top, hanging, middle, alphabetic, ideographic, bottom 
+						</td>
+					</tr>
+
+					<tr>
+						<td> 
+							<canvas id="canvasText3"></canvas> 
+						</td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-26.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+					<tr >
+						<td colspan="3" style="border-bottom:0px;">
+							<canvas id="canvasText4"></canvas> 
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<img src="./img/canvas2-27.png"  width="80%" class="mf50"/><br/> 
+						</td>
+					</tr>
+					<tr>
+						<td> 
+							<canvas id="canvasText5"></canvas> 
+						</td>
+						<td colspan="2"> 
+							<img src="./img/canvas2-28.png"  width="100%" class="mf10"/><br/>
+						</td>
+					</tr>
+				</row>
+			</table>
+			
+	</main>
+		
+
+</body>
+</html>
