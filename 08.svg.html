@@ -371,13 +371,23 @@
 						<td>
 							<svg height="300" width="300" style="border:1px solid black">
 								<defs>
-									<filter id="f1" width="200%" height="200%"> 
-										<feOffset result="shadowGraphic" in="SourceGraphic" dx="0" dy="0" />
-										<!-- <feGaussianBlur result="blurredShadow" in="shadowGraphic" stdDeviation="10" /> -->
-										<!-- <feBlend in="SourceGraphic" in2="blurredShadow" /> -->
+								  <filter id="f3" x="0" y="0" width="200%" height="200%">
+									<feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+									<feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+								  </filter>
+								</defs>
+								<rect width="90" height="90" stroke="green" stroke-width="3"
+								fill="yellow" filter="url(#f3)" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black">
+								<defs>
+									<filter id="f4" width="200%" height="200%"> 
+										<feOffset result="shadowGraphic" in="SourceGraphic" dx="30" dy="20" />
+										<feGaussianBlur result="blurredShadow" in="shadowGraphic" stdDeviation="10" />
+										<feBlend in="SourceGraphic" in2="blurredShadow" />
 									</filter>
 								</defs>
-								<circle cx="50" cy="50" r="50" stroke="red" stroke-width="3" fill="blue" filter="url(#f1)" />
+								<circle cx="90" cy="90" r="70" stroke="red" stroke-width="3" fill="blue" filter="url(#f4)" />
 							</svg>
 						</td>
 						<td colspan="2"> 
@@ -385,6 +395,50 @@
 						</td>
 					</tr>
 
+					<tr>
+						<td class="pathTd" >선형 그라데이션 </td>
+						<td colspan="2">  linearGradient 요소 </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<defs>
+									<linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
+										<stop offset="0%" style="stop-color:red" />
+										<stop offset="50%" style="stop-color:green" />
+										<stop offset="100%" style="stop-color:blue" />
+										<rect width="200" height="200" fill="url(#lg1)" />
+									</linearGradient>
+								</defs>
+								<rect width="200" height="200" fill="url(#lg1)" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-20.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" >방사형 그라데이션 </td>
+						<td colspan="2"> radialGradient 요소 </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<defs>
+									<radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+									  <stop offset="0%" style="stop-color:rgb(255,255,0); stop-opacity:0" />
+									  <stop offset="50%" style="stop-color:rgb(50,255,50); stop-opacity:1" />
+									  <stop offset="80%" style="stop-color:rgb(0,50,255);stop-opacity:1" />
+									</radialGradient>
+								  </defs>
+								  <rect width="200" height="200" fill="url(#grad1)" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-21.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
 
 			</table>
 			
