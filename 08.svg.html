@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='./css/main03.css?ver=1'>
+	<title>SVG</title>
+</head>
+<body>
+	<main style="background-color: white;">
+		<!-- <canvas id="yourCanvas" width="500px" height="300px" style="background-color:white" ></canvas> -->
+			<h1 class="mt30 align-center">SVG</h1>
+			<table>
+				<colgroup>
+					<col style="width: 30%">
+          <col style="width: 35%">
+          <col style="width: 35%">
+				</colgroup>
+
+					<tr>
+						<td class="pathTd" colspan="3"> SVG </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> XML 기반의 2차원 벡터 그래픽을 위한 플랫폼 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">팀 버너스-리</td>
+						<td colspan="2">→ “모든 크기의 장치에서 최적으로 그림을 그릴 수 있는 그래픽”</td>
+					</tr>
+					<tr>
+						<td class="pathTd">Scalable Vector Graphic</td>
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="pathTd">웹용 확장 가능한 벡터 그래픽</td>
+						<td colspan="2">SVG→“벡터 방식” / 캔버스→“비트맵 방식”</td>
+					</tr>
+					<tr>
+						<td>
+							<svg style="border:1px solid blue" width="300px" height="300px">
+								<circle cx="100" cy="100" r="50" 
+								stroke="black" stroke-width="2" 
+								fill="red"/>
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-0.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/svg-1.png"  width="80%" class="mf50"/>
+							<hr/>
+							<img src="./img/svg-2.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 도형 및 텍스트 그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">사각형 그리기 -> rect 요소</td>
+						<td colspan="2"> rect x="시작점x" y="시작점y" width="폭" height="높이" </td>
+					</tr>
+					<tr>
+						<td>
+							<!--(기본)검은색으로 채워짐-->
+							<!--SVG 요소에서 사용할 영역의 크기 지정-->
+							<svg width="400" height="400"  style="border:1px solid black">
+								<rect x="50" y="20" 
+									width="150" height="150"
+									style="fill:green;stroke:rgb(0,0,0);
+									stroke-width:10;
+									fill-opacity:0.7;
+									stroke-opacity:0.7" />
+								</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-3.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/svg-4.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 모서리가 둥근 사각형  </td>
+					</tr>
+					<tr>
+						<td class="pathTd">사각형 그리기 -> rect 요소</td>
+						<td colspan="2"> rect x="시작점x" y="시작점y" width="폭" height="높이" </td>
+					</tr>
+					<tr>
+						<td>
+							<svg width="400" height="400"  style="border:1px solid black">
+								<rect x="50" y="20" rx="20" ry="40"  
+									width="150" height="150" 
+									style="fill:green;stroke:rgb(0,0,0);
+									stroke-width:10;
+									fill-opacity:0.7;
+									stroke-opacity:0.7" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-5.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<td colspan="3" class="pathTd"> 원그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">circle 요소</td>
+						<td colspan="2"> circle cx="중심 x좌표" cy="중심 y좌표" r="반지름" <br/> cx, cy 생략 → 원의 중심 (0,0)  </td>
+					</tr>
+					<tr>
+						<td>
+							<svg width="400" height="400" style="border:1px solid black">
+								<circle cx="100" cy="100" r="80" fill="orange" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-6.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 타원그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">ellipse 요소</td>
+						<td colspan="2"> ellipse cx="중심x" cy="중심y" rx="x축반지름" ry="y축반지름"  </td>
+					</tr>
+					<tr>
+						<td>
+							<svg width="500" height="300"  style="border:1px solid black">
+								<ellipse cx="250" cy="150" rx="200" ry="50" style="fill:blue" />
+								<ellipse cx="250" cy="150" rx="50" ry="140" style="fill:green" />
+								<ellipse cx="250" cy="150" rx="50" ry="50" style="fill:white" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-7.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td colspan="3" class="pathTd"> 선그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">line 요소</td>
+						<td colspan="2"> line x1="x1" y1="y1" x2="x2" y2="y2"  </td>
+					</tr>
+					<tr>
+						<td>
+							<svg width="200" height="200"  style="border:1px solid black">
+								<line x1="10" y1="10" x2="190" y2="190" style="stroke:red;stroke-width:5" />
+								<line x1="190" y1="10" x2="10" y2="190" style="stroke:green;stroke-width:5" />
+								<line x1="10" y1="100" x2="190" y2="100" style="stroke:blue;stroke-width:15" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-8.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd">polyline 요소</td>
+						<td colspan="2"> polyline points="직선을 구성하는 (x,y) 집합"  </td>
+					</tr>
+					<tr>
+						<td>
+							<svg width="400" height="200" viewBox="0 0 800 400"  style="border:1px solid black"> <!--viewBox 속성 → SVG 문서의 논리적 좌표 400*200 영역을 800*400 영역으로 간주-->
+								<rect x="1" y="1" width="798" height="398" fill="none" stroke="blue" stroke-width="2" /><!--x="시작점x" y="시작점y" width="폭" height="높이" -->
+								<polyline fill="none" stroke="blue" stroke-width="10"
+									points="50,375 150,375 150,175 250,175 250,375 
+									350,375 350,100 450,100 450,375 550,375 
+									550,25 650,25 650,375 750,375" /> <!-- points="다각형의 각 꼭지점 (x,y) 집합"-->
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-9.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 다각형 그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">polygon 요소</td>
+						<td colspan="2"> polygon points="다각형의 각 꼭지점 (x,y) 집합"  </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<polygon points="150,50 250,250 50,250" style="fill:pink;stroke:black;stroke-width:3" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black">
+								<polygon fill="red" stroke="blue" stroke-width="10"
+									points="200,75 229,161 319,161 247,215 273,301
+									200,250 127,301 153,215 81,161 171,161" />  <!-- points="다각형의 각 꼭지점 (x,y) 집합"-->
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-10.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3" class="pathTd"> 경로 그리기 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">path 요소</td>
+						<td colspan="2"> 
+							path d="경로 데이터" <br/>
+							-> 경로 데이터에서 사용되는 명령 <br/>
+							• Mx,y→ 절대 좌표 (x, y)를 시작점으로 지정 <br/>
+							• Lx,y→ 절대 좌표 (x, y)까지 선을 그림 <br/>
+							• Z → 마지막 좌표와 처음 좌표를 연결하여 폐쇄 도형을 표시 <br/>
+							• 대문자 명령는 절대 좌표, 소문자 명령은 상대 좌표를 의미 <br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<polygon points="150,50 250,250 50,250" style="fill:pink;stroke:black;stroke-width:3" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black">
+								<polygon points="150,50 250,250 50,250 150,50" style="fill:pink;stroke:black;stroke-width:3" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black"> <!--path일 경우 direction-->
+								<path d="M150,50 L250,250 L50,250 Z" style="fill:pink;stroke:black;stroke-width:3" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black">
+								<path d="M150,50 L100,200 L-200,0 Z" style="fill:pink;stroke:black;stroke-width:3" />
+							</svg>
+							<!--grouping-->
+							<!--• 여러 요소들을 하나의 요소로 그룹핑하는 요소 • 요소내의 속성은 그룹내의 모든요소에 공통적으로 적용-->
+							<svg height="300" width="300" style="border:1px solid black">
+								<line x1="10" y1="10" x2="190" y2="190"  style="stroke:red;stroke-width:5" />
+								<line x1="190" y1="10" x2="10" y2="190"  style="stroke:green;stroke-width:5" />
+								<line x1="10" y1="100" x2="190" y2="100" style="stroke:blue;stroke-width:15" />
+							</svg>
+							<svg height="300" width="300" style="border:1px solid black">
+								<g fill:none stroke-width="5">
+									<path d="M10,10 L180,180" stroke="red" />
+									<path d="M190,10 L-180,180" stroke="green" />
+									<path d="M10,100 L180,0" stroke="blue" stroke-width="15" />
+								</g>
+							</svg>
+							
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-11.png"  width="80%" class="mf50"/><br/>
+							<img src="./img/svg-12.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td class="pathTd">2차 베이지 곡선</td>
+						<td colspan="2"> Q 또는 q 명령 </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<path d="M150,50 q 100,200 -100,200" style="fill:pink; stroke:blue; stroke-width:3" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-13.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" colspan="3">텍스트 그리기</td>
+					</tr>
+					<tr>
+						<td class="pathTd">text 요소</td>
+						<td colspan="2"> text x="시작위치x" y="시작위치y">텍스트 </td>
+					</tr>
+					<tr>
+						<td>
+							<!--• font-style= "normal | italic | oblique" // • font-weight= "normal | bold | bolder | lighter| 100| 200 |… | 900" -->
+							<svg height="300" width="300" style="border:1px solid black">
+								<text x="30" y="50" font-family="Verdana" font-size="40" fill="none" stroke="red" stroke-width="2">컴퓨터과학과</text>
+								<text x="30" y="120" font-family="Verdana" font-size="50" fill="blue">HTML5</text>
+							</svg>
+							<!-- 선스타일 지정 stroke-linecap-->
+							<svg height="300" width="300" style="border:1px solid black">
+								<g fill="none">
+									<path d="M30,30 L200,30" stroke="red" stroke-width="20" stroke-linecap="butt" />
+									<path d="M30,70 L200,70" stroke="green" stroke-width="25" stroke-linecap="round" />
+									<path d="M30,110 L200,110" stroke="blue" stroke-width="30" stroke-linecap="square" />
+								</g>
+							</svg>
+							<!-- 선스타일 지정 stroke-dasharray-->
+							<svg height="300" width="300" style="border:1px solid black">
+								<g fill="none" stroke="blue" stroke-width="10">
+									<path stroke-dasharray="5" d="M30,20 L200,20" />
+									<path stroke-dasharray="1,1"  d="M30,40 L200,40" />
+									<path stroke-dasharray="10,5,5,10"  d="M30,60 L200,60" />
+								</g>
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-15.png"  width="80%" class="mf50"/><br/>
+							<img src="./img/svg-16.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" colspan="3">이미지 삽입하기</td>
+					</tr>
+					<tr>
+						<td class="pathTd">image 요소</td>
+						<td colspan="2"> image x="시작위치x" y="시작위치y"  height ="높이" weight="폭" xlink:href="이미지경로" </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<image x="10" y="10" height="150" width="250" xlink:href="./img/lion.jpg" />
+							</svg>
+							
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-17.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td class="pathTd" colspan="3">필터 그라데이션 SVG 필터</td>
+					</tr>
+					<tr>
+						<td class="pathTd" >SVG 필터_블러링 효과 </td>
+						<td colspan="2">  feGaussianBlur 요소 </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<defs>
+									<filter id="f1" x="0" y="0">
+										<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+									</filter>
+									<filter id="f2" x="0" y="0">
+										<feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+									</filter>
+								</defs>
+								<rect x="10", y="10", width="50", height="50", 
+								stroke="red", stroke-width="5" fill="blue" />
+								<rect x="60", y="10", width="50", height="50", 
+									stroke="red", stroke-width="5" fill="blue" 
+									filter="url(#f1)"
+								/>
+								<rect x="120", y="10", width="50", height="50", 
+									stroke="red", stroke-width="5" fill="blue" 
+									filter="url(#f2)" 
+								/>
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-18.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" >SVG 필터_그림자 효과 </td>
+						<td colspan="2">  기본 연산 → feOffset 요소, feBlend 요소 </td>
+					</tr>
+					<tr>
+						<td>
+							<svg height="300" width="300" style="border:1px solid black">
+								<defs>
+									<filter id="f1" width="200%" height="200%"> 
+										<feOffset result="shadowGraphic" in="SourceGraphic" dx="0" dy="0" />
+										<!-- <feGaussianBlur result="blurredShadow" in="shadowGraphic" stdDeviation="10" /> -->
+										<!-- <feBlend in="SourceGraphic" in2="blurredShadow" /> -->
+									</filter>
+								</defs>
+								<circle cx="50" cy="50" r="50" stroke="red" stroke-width="3" fill="blue" filter="url(#f1)" />
+							</svg>
+						</td>
+						<td colspan="2"> 
+							<img src="./img/svg-19.png"  width="80%" class="mf50"/><br/>
+						</td>
+					</tr>
+
+
+			</table>
+			
+	</main>
+		
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='./css/main03.css?ver=1'>
+	<script src="./js/main04.js"></script>
+	<title>canvas</title>
+</head>
+<body>
+	<main style="background-color: white;">
+		<!-- <canvas id="yourCanvas" width="500px" height="300px" style="background-color:white" ></canvas> -->
+			<h1 class="mt30 align-center">캔버스3</h1>
+			<table>
+				<colgroup>
+					<col style="width: 30%">
+          <col style="width: 35%">
+          <col style="width: 35%">
+				</colgroup>
+					<tr>
+						<td class="pathTd" colspan="3"> 도형변환 </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 캔버스의 좌표계의 변환(이동, 회전, 확대/축소)을 통해
+							캔버스에 그려지는 도형의 변환을 지정 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">이동 변환</td>
+						<td colspan="2">translate(x, y)</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasTranslate"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-0.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas3-1.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">크기 변환1</td>
+						<td colspan="2">scale(x, y)</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasScale"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-2.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas3-3.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">크기 변환2 </td>
+						<td colspan="2">scale(x, y) 인자가 음수인 경우</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasScale1"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-4.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas3-5.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">회전 변환</td>
+						<td colspan="2">rotate(각도)</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasRotate"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-6.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas3-7.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd">사용자 정의 변환</td>
+						<td colspan="2">transform(), setTransform()</td>
+					</tr>
+					<tr>
+						<td> 
+							<canvas id="canvasCustom"></canvas> 
+							<canvas id="canvasCustom1"></canvas> 
+						</td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-8.png"  width="80%" class="mf50"/><br/>
+							<hr/>
+							<img src="./img/canvas3-9.png"  width="80%" class="mf50"/>
+							<hr/>
+							<img src="./img/canvas3-10.png"  width="80%" class="mf50"/>
+							<hr/>
+							<img src="./img/canvas3-11.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="pathTd" colspan="3"> 이미지 삽입 </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> drawImage() 메서드 </td>
+					</tr>
+					<tr>
+						<td colspan="2" class="pathTd">drawImage(이미지변수, dx, dy)</td>
+						<td>원본 이미지의원래 크기대로 캔버스의 지정된 위치 (dx, dy)에 삽입</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="pathTd">drawImage(이미지변수, dx, dy, dw, dh)</td>
+						<td>원본 이미지를 캔버스의 지정된 위치 (dx, dy)에서dw*dh 크기로 삽입</td>
+					</tr>
+					<tr>
+						<td colspan="2"  class="pathTd">drawImage(이미지변수, sx, sy, sw, sh, dx, dy, dw, dh)</td>
+						<td>원본 이미지의 (sx, sy) 위치에서sw*sh 크기로 잘라내어<br/>
+							캔버스의 지정된 위치 (dx, dy)에서dw*dh 크기로 삽입</td>
+					</tr>
+					<tr>
+						<td colspan="3"> <canvas id="canvasDrawImage1"></canvas> </td>
+					</tr>
+					<tr>
+						<td colspan="2"> 
+							<img src="./img/canvas3-13.png"  width="80%" class="mf50"/><br/>
+							<img src="./img/canvas3-14.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" colspan="3"> 이미지 데이터조작 </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 이미지의 각 픽셀에 직접 접근해서 다양한 조작이 가능 </td>
+					</tr>
+					<tr>
+						<td colspan="2" class="pathTd"> createImageData(폭, 높이), createImageData(이미지데이터)</td>
+						<td> 모든 픽셀이 투명한 검은색으로 초기화된 빈 ImageData 객체 생성/반환</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="pathTd">getImageData(sx, sy, sw, sh)</td>
+						<td>캔버스 영역에서 지정한 사각형 영역의 픽셀 데이터를 복사한 ImageData 객체를 반환</td>
+					</tr>
+					<tr>
+						<td colspan="2"  class="pathTd"> putImageData(이미지데이터, dx, dy)</td>
+						<td>지정한 ImageData 객체의 데이터를 캔버스의 지정한 위치에 그림</td>
+					</tr>
+					<tr>
+						<td colspan="1"> <canvas id="canvasDrawData"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-15.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-16.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-17.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+								<table>
+									<tr>
+										<td>
+											<img id="canvasDrawDataImage1" src="./img/lion.jpg" height="100"> 
+										</td>
+										<td id="sketch1"></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											왼쪽 그림을 클릭하면 오른쪽 캔버스의 그림이 표시됩니다
+										</td>
+									</tr>
+								</table>	
+						</td>
+						<td  colspan="2" rowspan="2"> 
+							<img src="./img/canvas3-18.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-19.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-20.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+								<table>
+										<td>
+											<img id="canvasDrawDataImage2" src="./img/lion.jpg" width="150"> 
+										</td>
+										<td id="sketch2"></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											왼쪽 그림을 클릭하면 오른쪽 캔버스의 그림이 표시됩니다
+										</td>
+									</tr>
+								</table>	
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+								<table>
+									<tr>
+										<td>
+											<canvas id="canvasImageDataOp"></canvas> 
+										</td>
+										<td id="sketch3"></td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											왼쪽 그림을 클릭하면 오른쪽 캔버스의 그림이 표시됩니다
+										</td>
+									</tr>
+								</table>	
+						</td>
+						<td  colspan="2"> 
+							<img src="./img/canvas3-21.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-22.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-23.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<canvas id="canvasClipping"></canvas>
+						</td>
+						<td colspan="2">
+							<img src="./img/canvas3-24.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-25.png"  width="80%" /><hr/>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="pathTd" colspan="3"> 캔버스 상태의 저장과 복원 </td>
+					</tr>
+					<tr>
+						<td colspan="3" class="pathTd"> 스택을 이용한 드로잉 상태 정보의 저장/관리가 가능 </td>
+					</tr>
+					<tr>
+						<td class="pathTd">save()</td>
+						<td colspan="2">현재 드로잉 상태의 정보를 스택에 저장</td>
+					</tr>
+					<tr>
+						<td class="pathTd">restore()</td>
+						<td colspan="2">스택에 저장되어 있는 드로잉 상태 정보를 가져와서 현재의 상태로 복원</td>
+					</tr>
+					<tr>
+						<td> <canvas id="canvasSaveRestore"></canvas> </td>
+						<td colspan="2"> 
+							<img src="./img/canvas3-26.png"  width="80%" class="mf50"/><hr/>
+							<img src="./img/canvas3-27.png"  width="80%" class="mf50"/>
+						</td>
+					</tr>
+			</table>
+			
+	</main>
+		
+
+</body>
+</html>
