@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main04-select-pseudo.css'>
+    <title>7,8강</title>
+</head>
+<body>
+    <header>
+        <!------------------------------- 목차 --------------------------------->
+           <span class="mr50"><a class="nav" href="#css-selector">CSS 선택자</a></span>
+           <span class="mr50"><a class="nav" href="#css-pseudo">가상 선택자</a></span>
+           <span class="mr50"><a class="nav" href="#css-combine">결합자</a></span>
+    </header>
+
+
+    <main>
+        <h2 id="css-selector">CSS 선택자</h2> <br/>
+            <div class="container">
+                <table>
+                    <thead>
+                        <th>선택자 이름</th>
+                        <th>선택자 형태</th>
+                        <th>설명</th>
+                    </thead>
+                    <tr>
+                        <td>전체 선택자</td>
+                        <td>*</td>
+                        <td>모든 요소에 스타일</td>
+                    </tr>
+                    <tr>
+                        <td>타입 선택자</td>
+                        <td>요소명</td>
+                        <td>지정한 요소에만 스타일 적용</td>
+                    </tr>
+                    <tr>
+                        <td>클래스 선택자</td>
+                        <td>요소명.클래스명<br/> .클래스명</td>
+                        <td>지정한 클래스명을 사용한 요소에만 적용</td>
+                    </tr>
+                    <tr>
+                        <td>아이디 선택자</td>
+                        <td>요소명#아이디명<br/> #아이디명</td>
+                        <td>지정한 아이디명을 사용한 요소에만 적용</td>
+                    </tr>
+                    <tr>
+                        <td>속성 선택자</td>
+                        <td>요소명[속성]</td>
+                        <td>지정한 속성에 해당하는 요소에만 적용</td>
+                    </tr>
+                </table>
+                
+                <p class="class1"> 동일 요소 , 다른 스타일 </p>
+                <p class="class2"> 동일 요소 , 다른 스타일 </p>
+                <p class="class3"> 동일 요소 , 다른 스타일 </p>
+
+                <h3 class="class1 header"> 다른 요소 , 같은 스타일 </h3>
+                <p class="class1"> 다른 요소 , 같은 스타일 </p>
+                <div class="class1">다른 요소 , 같은 스타일</div>
+
+                <div id="style1"> 
+                    div 요소에 아이디 선택자 (#style1) 적용
+                    <p id="style2"> p 요소에 아이디 선택자 (p#style2) 적용</p>
+                    <p> id 는 문서에서 중복되지 않고 한 요소에서 한 번만 사용 가능 </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <th colspan="2"> 요소명[속성명 연산자 값]{ 속성: 값; ... }</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>요소명[속성명]</td>
+                            <td>속성값과 상관없이 해당 속성을 사용하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명="값"]</td>
+                            <td>속성값과 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명~="값"]</td>
+                            <td>속성값을 공백으로 구분한 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명|="값"]</td>
+                            <td>속성값이 정확히 일치하거나 값으로 시작하고 바로 뒤에 -기호로 구분한 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명^="값"]</td>
+                            <td>속성값의 시작부분의 문자와 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명$="값"]</td>
+                            <td>속성값의 끝 부분의 문자와 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명*="값"]</td>
+                            <td>속성값 전체 중 어떤 일부분이라도 일치하는 요소를 선택</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 속성 선택자1 -->
+                <form>
+                    <div>
+                        <label for="id">아이디</label>
+                        <input type="text" id="id" name="id"/>
+                    </div>
+                    <div>
+                        <label for="pw">패스워드</label>
+                        <input type="password" id="pw" name="pw"/>
+                    </div>
+                </form>
+                
+                <!-- 속성 선택자2 -->
+                <a title="naver" href="http://www.naver.com">네이버</a><br/>
+                <a title="daum" href="http://www.daum.net">다음</a><br/>
+                <a title="nate cyworld" href="http://www.cyworld.com">싸이월드</a><br/>
+                <a title="google-translate" href="http://translate.google.com">구글 번역</a><br/>
+                <a title="facebook" href="http://www.facebook.com">페이스북</a><br/>
+                <a title="twitter" href="http://www.twitter.com">트위터</a><br/>
+                <a title="youtube" href="http://kr.youtube.com">유튜브</a><br/>
+            </div><br/>
+
+            <!-- 가상 선택자  참고 // http://tcpschool.com/css/css_selector_structure-->
+            <!-- 가상 클래스 -->
+            <h2 id="css-pseudo">가상 선택자(가상클래스)</h2> <br/> <!--pseudo : 가짜의 -->
+            <div class="container">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        <strong>가상 선택자 : </strong> 웹 문서상에는 존재하지 않지만 어떤 상황이 발생한 경우에만 
+                        적용할 수 있도록 임의로 선택자를 지정/사용 기본 선택자를 활용하여 표현할 수 없는 정보를 기반으로 요소 선택이 가능<br/>
+                        <strong>가상클래스 : </strong> 가상클래스(Pseudo-Class)는,별도의 class를 지정하지 않아도 지정한 것 처럼요소를 선택할 수 있습니다.<br/>
+                        <strong>사용방법 : </strong>"기본 선택자:가상클래스"<br/>
+                    </td>
+                </tr>
+                <thead>
+                    <th>구분</th>
+                    <th>가상클래스</th>
+                    <th>설명</th>
+                </thead>
+                <tr>
+                    <td rowspan="2">링크 가상클래스</td>
+                    <td>:link</td>
+                    <td>아직 방문한 적이 없는 링크를 선택</td>
+                </tr>
+                <tr>
+                    <td>:visited</td>
+                    <td>사용자에 의해 방문한 적이 있는 링크를 선택</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">사용자 동작 가상클래스</td>
+                    <td>:hover</td>
+                    <td>사용자가 포인팅 장치로 특정요소를 지정하는 동안에 적용</td>
+                </tr>
+                <tr>
+                    <td>:active</td>
+                    <td>사용자에 의해 요소가 활성화되는 동안에 적용</td>
+                </tr>
+                <tr>
+                    <td>:focus</td>
+                    <td>요소가 포커스를 가지고 있는 동안에 적용</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="4">UI 상태</td>
+                    <td>:enabled</td>
+                    <td>활성화된 상태의 요소</td>
+                </tr>
+                <tr>
+                    <td>:disabled</td>
+                    <td>비활성화된 상태의 요소</td>
+                </tr>
+                <tr>
+                    <td>:checked</td>
+                    <td>체크된 input 요소 (체크박스, 라디오 버튼)</td>
+                </tr>
+                <tr>
+                    <td>부정→ :not(X)</td>
+                    <td>:not(X) X로 표현되지 않은 요소</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="12">트리구조</td>
+                    <td>:first-child</td>
+                    <td>모든 자식(child) 요소 중에서 맨 앞에&nbsp;위치하는 자식(child) 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:last-child</td>
+                    <td>모든 자식(child) 요소 중에서 맨 마지막에 위치하는 자식(child) 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:nth-child</td>
+                    <td>모든 자식(child) 요소 중에서 앞에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:nth-last-child</td>
+                    <td>모든 자식(child) 요소 중에서 뒤에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:first-of-type</td>
+                    <td>모든 자식(child) 요소 중에서 맨 처음으로 등장하는 특정&nbsp;타입의&nbsp;요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:last-of-type</td>
+                    <td>모든 자식(child)&nbsp;요소 중에서 맨 마지막으로 등장하는 특정 타입의 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:nth-of-type</td>
+                    <td>모든 자식(child)&nbsp;요소 중에서 n번째로&nbsp;등장하는 특정 타입의 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:nth-last-of-type</td>
+                    <td>모든 자식(child)&nbsp;요소 중에서 뒤에서부터&nbsp;n번째로 등장하는 특정 타입의 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:only-child</td>
+                    <td>자식(child)&nbsp;요소를 단 하나만 가지는 요소의 자식(child) 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:only-of-type</td>
+                    <td>자식(child)&nbsp; 요소로 특정 타입의 요소 단 하나만을 가지는 요소의 자식(child)&nbsp;요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:empty</td>
+                    <td>자식(child)&nbsp;요소를 전혀 가지고 있지 않은 요소를 모두 선택함.</td>
+                </tr>
+                <tr>
+                    <td>:root</td>
+                    <td>문서의 root 요소를 선택함.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        <strong>가상 선택자 : </strong> 웹 문서상에는 존재하지 않지만 어떤 상황이 발생한 경우에만 
+                        적용할 수 있도록 임의로 선택자를 지정/사용 기본 선택자를 활용하여 표현할 수 없는 정보를 기반으로 요소 선택이 가능<br/>
+                        <strong>가상요소 : </strong>가상요소(Pseudo-Element)는, 가상클래스처럼 선택자(selector)에 추가되며, 존재하지 않는 요소를 존재하는 것처럼 부여하여 문서의 특정 부분 선택이 가능합니다<br/>
+                        <strong>사용방법 : </strong>"기본선택자::가상요소"
+                    </td>
+                </tr>
+                <thead>
+                    <th>구분</th>
+                    <th>가상요소</th>
+                    <th>설명</th>
+                </thead>
+                <tr>
+                    <td rowspan="4">가상요소</td>
+                    <td>::first-letter</td>
+                    <td>::first-letter 특정 요소의 첫 번째 글자를 선택</td>
+                </tr>
+                <tr>
+                    <td> ::first-line</td>
+                    <td>::first-line 특정 요소의 첫 번째 줄을 선택</td>
+                </tr>
+                <tr>
+                    <td> ::before</td>
+                    <td>::before 요소 앞에 내용/스타일 추가</td>
+                </tr>
+                <tr>
+                    <td> ::after</td>
+                    <td>::after 요소 뒤에 내용/스타일 추가</td>
+                </tr>
+                
+            </table>
+
+
+            <h4>가상클래스_사용자동작</h4>
+            <form>
+                <input type="text" value="홍길동">
+                <input type="number" value="25" disabled><br/>
+                <input type="checkbox" id="xxx"  name="xxx" value="yyy" checked>
+                <label for="huey">yyy</label>
+                <input type="checkbox" id="aaa" name="aaa" value="bbb" >
+                <label for="huey">bbb</label><br/>
+                <input type="radio" id="huey" name="drone" value="huey" checked>
+                <label for="huey">Huey</label>
+                <input type="radio" id="huey" name="fly" value="fly" >
+                <label for="fly">fly</label>
+            </form>
+
+            <h4>가상클래스_링크</h4>
+            <div><a href="http://www.knou.ac.kr">한국방송통신대학교</a></div>
+            <div><a href="http://cs.knou.ac.kr">컴퓨터과학과</a></div>
+            <div><a href="http://cs.knou.ac.kr/~kylee">교수홈페이지</a></div><br/>
+
+            <table class="pseudo">
+                <tr>
+                    <td>이름</td>
+                    <td>중간</td>
+                    <td>기말</td>
+                    <td>평균</td>
+                </tr>
+                <tr>
+                    <td>홍길동</td>
+                    <td>90</td>
+                    <td>92</td>
+                    <td>91</td>
+                </tr>
+                <tr>
+                    <td>이몽룡</td>
+                    <td>88</td>
+                    <td>96</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>이수일</td>
+                    <td>88</td>
+                    <td>96</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>황진이</td>
+                    <td>88</td>
+                    <td>96</td>
+                    <td>92</td>
+                </tr>
+            </table>
+            <hr>
+            <p class="line">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione pariatur nesciunt iure commodi saepe nulla laudantium ipsam eius, voluptatibus possimus ipsum sequi sunt assumenda ea debitis, ullam dolores asperiores veniam!</p>
+            <p class="note"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi illo nostrum officiis tempore molestias, exercitationem omnis maiores similique veritatis quis ex quas sapiente eveniet molestiae. Doloribus totam dignissimos laborum est.</p>
+        </div>
+        <br/>
+
+        <!--결합자-->
+        <h2 id="css-combine">결합자</h2> <br/>
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="2">선택자를 문맥이나 요소의 구조를 기반으로 결합하는 방법</td>
+                </tr>
+                <thead>
+                    <th>결합자 명칭<br/>사용형식</th>
+                    <th>설명</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>자손결합자<br/> 선택자1  선택자2</td>
+                        <td>선택자1의 자손(하위요소) 중에서 선택자 2에 해당하는 모든 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>자식결합자<br/> 선택자1 > 선택자2</td>
+                        <td>선택자1을 부모요소로하여 직계자식요소인 선택자2를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>인접형제결합자<br/> 선택자1 + 선택자2</td>
+                        <td>선택자1 바로 뒤에 오는 동생인 선택자2 요소만을 선택</td>
+                    </tr>
+                    <tr>
+                        <td>일반형제결합자<br/> 선택자1 ~ 선택자2</td>
+                        <td>선택자1 다음에 오는 형제관계에 있는 모든 선택자2를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>그룹결합자<br/> 선택자1, 선택자2, ..</td>
+                        <td>여러 선택자가 동일한 스타일을 사용하는 경우에 선택자들을 한꺼번에 표현</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <h1>CSS 결합자 </h1>
+                <p>CSS에서 사용하는 <em>결합자의 종류</em>를 연습</p>
+                <ul>
+                    <li>자손결합자: 선택자1 공백 선택자2</li>
+                    <li class="style1">자식결합자: 선택자1 &gt; 선택자2</li>
+                    <li>인접형제결합자: 선택자1 + 선택자2</li>
+                    <li>일반형제결합자: 선택자1 ~ 선택자2</li>
+                    <li>그룹결합자: 선택자1,선택자2, ...</li>
+                </ul>
+                <p>다양한 결합자를 사용해서 결과를 확인해보세요</p>
+            </div>
+        </div>
+
+            
+        <!-- 홈으로 가는 버튼 -->
+        <a class="nav" href="#css-selector"><div class="box">home</div></a>
+    </main>
+</body>
+</html>
