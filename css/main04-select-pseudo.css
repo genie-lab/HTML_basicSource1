@@ -121,13 +121,13 @@ input:not([type="radio"]) { color: red; } /*:not(X) X로 표현되지 않은 요
 
 /*========== 속성 선택자1 */
 a { font-weight: bold; font-size: 12pt;}
-a[title] { color: #222;}
-a[title="daum"] { color:red }
-a[title~="cyworld"] { color:orangered } /*속성값을 공백으로 구분한 요소를 선택*/
-a[title|="google"] { color:orange } /*속성값이 정확히 일치 or 값으로 시작하고 바로뒤에 - 기호로 구분한 요소 선택*/
-a[title^="face"] { color:greenyellow } /*속성값의 시작부분의 문자와 일치하는 요소를 선택 */
-a[title$="ter"] { color:skyblue } /*속성값의 끝 부분의 문자와 일치하는 요소를 선택*/
-a[title*="utu"] { color:purple } /*속성값 전체 중 어떤 일부분이라도 일치하는 요소를 선택*/
+a[title].selector { color: #222;}
+a[title="daum"].selector { color:red }
+a[title~="cyworld"].selector { color:orangered } /*속성값을 공백으로 구분한 요소를 선택*/
+a[title|="google"].selector { color:orange } /*속성값이 정확히 일치 or 값으로 시작하고 바로뒤에 - 기호로 구분한 요소 선택*/
+a[title^="face"].selector { color:greenyellow } /*속성값의 시작부분의 문자와 일치하는 요소를 선택 */
+a[title$="ter"].selector { color:skyblue } /*속성값의 끝 부분의 문자와 일치하는 요소를 선택*/
+a[title*="utu"].selector { color:purple } /*속성값 전체 중 어떤 일부분이라도 일치하는 요소를 선택*/
 
 /*========== 의사클래스_사용자동작 */
 input:hover { background-color: green;} /*사용자가 포인팅 장치로 특정요소를 지정하는 동안 적용*/
