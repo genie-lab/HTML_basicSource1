@@ -1,0 +1,6 @@
+/*white-space*/
+p.wh-normal {  width:22em; border:2px solid #c311d3; white-space: normal;};
+p.wh-nowrap {  width:100px; border:2px solid #330b36; white-space: nowrap !important;};
+p.wh-pre { white-space: pre};
+p.wh-pre-wrap { white-space: pre-wrap};
+p.wh-pre-line { white-space: pre-line};
