@@ -265,7 +265,81 @@
         <div class="box2 shadow5"> 박스1 : 그림자5 box-shadow: 10px 15px 20px red inset </div>
         <div class="box2 shadow6"> 박스1 : 그림자6 box-shadow: 10px 15px 20px 10px red inset </div>
     </div>
+
+    <h4>border-image-source / border-image-slice 속성</h4>
+    <ul>
+        <li>border-image-source </li>
+        <li>테두리에 사용할 이미지 지정</li>
+        <li>border-image-slice</li>
+        <li>테두리 영역에 보여질 이미지를 자르는 방법 지정</li>
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-source"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-fill"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-1"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-2"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-3"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-4"> 테두리 이미지 지정 </div>
+        <div class="box bd-slice-5"> 테두리 이미지 지정 </div>
+    </div>
+
+
+    <h4>border-image-repeat 속성</h4>
+    <ul>
+        <li>border-image-repeat</li>
+        <li>테두리 이미지가 반복되는 스타일 지정</li>
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-img-repeat-stretch"> 테두리 이미지 지정 </div>
+        <div class="box bd-img-repeat-repeat"> 테두리 이미지 지정</div>
+        <div class="box bd-img-repeat-round"> 테두리 이미지 지정 </div>
+        <div class="box bd-img-repeat-space"> 테두리 이미지 지정 </div>
+    </div>
     
+
+    <h4>border-image-width 속성</h4>
+    <ul>
+        <li>border-image-width</li>
+        <li>테두리 이미지의 폭 지정</li>
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-img-width-auto"> 테두리 이미지 지정 </div>
+        <div class="box bd-img-width-1"> 테두리 이미지 지정</div>
+        <div class="box bd-img-width-2"> 테두리 이미지 지정</div>
+        <div class="box bd-img-width-3"> 테두리 이미지 지정</div>
+        <div class="box bd-img-width-4"> 테두리 이미지 지정</div>
+        <div class="box bd-img-width-5"> 테두리 이미지 지정</div>
+    </div>
+
+    <h4>border-image-outset 속성</h4>
+    <ul>
+        <li>border-image-outset</li>
+        <li>테두리 이미지 영역이 테두리 박스를 벗어나
+            외부에 표시되도록 확장되는 영역 지정</li>
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-img-outset-zero"> 테두리 이미지 지정 </div>
+        <div class="box bd-img-outset-outer"> 테두리 이미지 지정</div>
+    </div>
+
+
+    <h4>아웃라인</h4>
+    <ul>
+        <li>outline-color : 아웃라인의 색상 지정 값 → &lt;색상&gt;, invert(색상을 역으로 만들어 배경색에 관계없이 확실히 보이도록 함)</li>
+        <li>outline-style : 아웃라인의 스타일 지정 → • 값 → auto, “border-style 속성(none, dotted, dashed, solid, double, ridge, groove, inset, outset)의 값”</li>
+        <li>outline-width : 아웃라인의 굵기 지정 → 값 → &lt;길이&gt;, “border-width 속성(thin, medium, thick)의 값”</li>
+        <li>outline : 아웃라인의 굵기, 스타일(필수), 색상의 일괄 지정</li>
+        <li>outline-offset : 요소의테두리와 아웃라인사이의 간격지정 → • 값 → &lt;길이&gt;</li>
+        
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-outline"> 테두리 이미지 지정 </div>
+        <div class="box bd-outline1"> 테두리 이미지 지정 </div>
+        <div class="box bd-outline2"> 테두리 이미지 지정 </div>
+    </div>
+    
+
+
     <h4>목록 속성 & 테이블 속성</h4>
     <table>
         <thead>
@@ -417,6 +491,23 @@
             <td></td> 
         </tr>
     </table> <br/>
+
+
+    <h4>그라데이션 >> 두 개 이상의 색상 사이에서 색상의 점진적인 변화</h4>
+    <ul>
+        <li>선형 그라데이션 → linear-gradient( )</li>
+        <li>선형 그라데이션의 반복 → repeating-linear-gradient( )</li>
+        <li>방사형 그라데이션 → radial-gradient( )</li>
+        <li>outline : 아웃라인의 굵기, 스타일(필수), 색상의 일괄 지정</li>
+        <li>방사형 그라데이션의 반복 → repeating-radial-gradient( )</li><br/>
+        
+    </ul>
+    <div class="position-exam">
+        <div class="box bd-outline"> 테두리 이미지 지정 </div>
+        <div class="box bd-outline1"> 테두리 이미지 지정 </div>
+        <div class="box bd-outline2"> 테두리 이미지 지정 </div>
+    </div>
+    
 
 </body>
 </html>
