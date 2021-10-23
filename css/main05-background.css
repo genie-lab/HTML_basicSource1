@@ -190,7 +190,75 @@ animation-play-state 애니메이션의 진행 또는 일시정지 상태
 animation-delay 애니메이션의 시작 전의 대기시간
 animation-fill-mode 실행 이전 또는 이후에 애니메이션 효과의 표시 여부
 animation animation-* 속성의 일괄 지정
-
-
 */
+@keyframes myAnimation1 {
+        from { top: 0px }
+        to { top: 200px }
+}
 
+@keyframes myAnimation {
+        0% { width: 100px; left: 0px; background: orange; }
+        20% { width: 150px; left: 50px; background: green; }
+        40% { width: 200px; left: 100px; background: red; }
+        60% { width: 150px; left: 150px; background: yellow; }
+        100% { width: 100px; left: 200px; background: blue; }
+        } 
+        
+.anibox { width: 100px; height: 100px; position: relative; background: orange; animation: myAnimation 5s 0.5s ease-in infinite normal; }
+
+@keyframes myAnimation1 {
+        from { background-color: red;
+                left: 0px; top: 0px; }
+        25% { background-color: yellow;
+                left: 200px; top: 0px; }
+        50% { background-color: cyan;
+                left: 200px; top: 200px; }
+        75% { background-color: lime;
+                left: 0px; top: 200px; }
+        to { background-color: red;
+                left: 0px; top: 0px; }
+}
+
+.anibox1 { 
+        width: 100px; height: 100px;
+        background-color: red; position: relative;
+        animation-name: myAnimation;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+ }
+/*다단지정 column-count*/
+ .count-column1 { border: 1px solid red; column-count: 1 ; }
+ .count-column2 { border: 1px solid red; column-count: 2 ; }
+ .count-column3 { border: 1px solid red; column-count: 3 ; }
+
+/*다단지정 column-width*/
+ .width-column1 { border: 1px solid red; column-width: 100px ; }
+ .width-column2 { border: 1px solid red; column-width: 150px ; }
+ .width-column3 { border: 1px solid red; column-width: 200px ; }
+
+ /*다단지정 columns*/
+ .columns-column1 { border: 1px solid red; columns: 200px 3; }
+ .columns-column2 { border: 1px solid red; columns: 150px 3; }
+
+ /*다단사이간격 gap*/
+ .columns-column1 { border: 1px solid red; columns: 200px 3; }
+ .columns-gap1 { border: 1px solid red;  column-count: 3; column-gap: normal; }
+ .columns-gap2 { border: 1px solid red;  column-count: 3; column-gap: 30px; }
+ .columns-gap3 { border: 1px solid red;  column-count: 3; column-gap: 60px; }
+
+ /*다단사이간격 rule == column-rule-width: 5px; column-rule-style: dotted; column-rule-color: blue;*/
+ .columns-rule { border: 1px solid red;  column-count: 3; column-rule: 5px dotted blue; }
+
+ /*해당 요소가 얼마나 많은 단을 차지할지를 지정
+   해당 요소가 설정된 다단을 무시하고 하나의 단으로 표시할 지 여부*/
+ .columns-span-none { background-color: yellow; column-span: none ;  } /*none, all*/
+ .columns-span-all { background-color: yellow; column-span: all ;  } /*none, all*/
+ 
+ /*각 단을 차지하는 콘텐츠의 양을 조절하여 각 단의 길이의 차이를 최소화할지 여부 지정 column-fill // balance, auto */
+ .columns-fill-auto { width: 500; height: 320px; padding: 5px; border:1px solid red; column-count: 3; column-rule: skyblue solid 2px; column-fill: auto ; } 
+ .columns-fill-balance { width: 500; height: 320px; padding: 5px; border:1px solid red; column-count: 3; column-rule: green solid 2px; column-fill: balance ; } 

@@ -553,25 +553,71 @@
         
     </ul>
     <div class="position-exam">
-        <div class="box bg-gradient-linear-bt"> 선형 그라데이션(위에서 아래로) </div>
-        <div class="box bg-gradient-linear-rt"> 선형 그라데이션(왼쪽에서 오른쪽으로) </div>
-        <div class="box bg-gradient-linear-btr"> 선형 그라데이션(좌상단에서 우하단으로) </div>
-        <div class="box bg-gradient-linear-btl"> 선형 그라데이션(우상단에서 좌하단으로) </div>
-        <div class="box bg-gradient-linear-many"> 선형 그라데이션(여러색의 균일한 변화) </div>
-        <div class="box bg-gradient-linear-spot"> 선형 그라데이션(여러색의 불균일한 변화) </div>
-        <div class="box bg-gradient-linear-rp"> 선형 그라데이션(위에서 아래로) </div>
+        <div class="anibox"> 애니메이션 속성 </div>
+    </div>
+    <div class="position-exam">
+        <div class="anibox1"> 애니메이션 속성 </div>
     </div>
 
-    <div class="position-exam">
-        <div class="box bg-gradient-radial-el"> 방사형 그라데이션 (ellipse 균일) </div>
-        <div class="box bg-gradient-radial-el1"> 방사형 그라데이션 (ellipse 불균일) </div>
-        <div class="box bg-gradient-radial-cir"> 방사형 그라데이션 (circle 균일) </div>
-        <div class="box bg-gradient-radial-cir1"> 방사형 그라데이션 (circle 불균일) </div>
-       
-        <div class="box bg-gradient-radial-closest-side"> 방사형 그라데이션 (closest-side) </div>
-        <div class="box bg-gradient-radial-farthest-side"> 방사형 그라데이션 (farthest-side) </div>
-        <div class="box bg-gradient-radial-rp"> 방사형 그라데이션 반복 </div>
-        <div class="box bg-gradient-radial-rp-cir"> 방사형 그라데이션 반복 </div>
+    <h4>다단</h4>
+    <ul>
+        <li>column-count  → 단의 개수 지정</li>
+        <li>column-width  → 단의 폭 지정</li>
+        <li>columns → column-count/width  속성의 일괄 지정</li>
+        <li>column-gap  → 단 사이의 간격 지정</li>
+        <li>column-rule  → 단 사이의 구분선 관련 속성의 일괄 지정 column-rule-width/style/color</li>
+        <li>column-span → 해당 요소가 얼마나 많은 단을 차지할 지를 지정</li>
+        <li>column-fill → 각 단을 동일한 양의 콘텐츠로 균형 있게 채울지를 지정</li>
+        <li>다단지정  → columns: column-width값 column-count값<br>
+            column-width: auto, &lt;길이&gt;(단의 폭)<br/>
+            column-count: auto, &lt;개수&gt;(단의 개수)<br/>
+        </li>
+        <br/>
+        
+    </ul>
+    <!--다단 column-count-->
+    <div class="count-column1"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="count-column2"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="count-column3"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    
+    <!--다단 column-width-->
+    <div class="width-column1"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="width-column2"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="width-column3"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    
+    <!--다단 column-width-->
+    <div class="columns-column1"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="columns-column2"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+ 
+    <!--다단 column-width-->
+    <div class="columns-gap1"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="columns-gap2"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    <div class="columns-gap3"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+ 
+    <!--다단 column-rule-->
+    <div class="columns-rule"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> </div>
+    
+    <!--다단 column-span  해당 요소가 얼마나 많은 단을 차지할지를 지정 
+    해당 요소가 설정된 다단을 무시하고 하나의 단으로 표시할 지 여부
+    값 → none, all
+    -->
+    <div class="columns-rule"> 
+        <h6 class="columns-span-none">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> 
+    </div>
+    
+    <div class="columns-rule"> 
+        <h6 class="columns-span-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> 
+    </div>
+    
+    <div class="columns-fill-auto"> 
+        <h6 class="columns-span-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> 
+    </div>
+    <div class="columns-fill-balance"> 
+        <h6 class="columns-span-all">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius error cum nam dolores fuga commodi voluptatem alias explicabo quidem! Quas harum explicabo in accusantium eligendi sint cumque obcaecati porro molestias?</p> 
     </div>
     
 
