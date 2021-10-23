@@ -503,9 +503,75 @@
         
     </ul>
     <div class="position-exam">
-        <div class="box bd-outline"> 테두리 이미지 지정 </div>
-        <div class="box bd-outline1"> 테두리 이미지 지정 </div>
-        <div class="box bd-outline2"> 테두리 이미지 지정 </div>
+        <div class="box bg-gradient-linear-bt"> 선형 그라데이션(위에서 아래로) </div>
+        <div class="box bg-gradient-linear-rt"> 선형 그라데이션(왼쪽에서 오른쪽으로) </div>
+        <div class="box bg-gradient-linear-btr"> 선형 그라데이션(좌상단에서 우하단으로) </div>
+        <div class="box bg-gradient-linear-btl"> 선형 그라데이션(우상단에서 좌하단으로) </div>
+        <div class="box bg-gradient-linear-many"> 선형 그라데이션(여러색의 균일한 변화) </div>
+        <div class="box bg-gradient-linear-spot"> 선형 그라데이션(여러색의 불균일한 변화) </div>
+        <div class="box bg-gradient-linear-rp"> 선형 그라데이션(위에서 아래로) </div>
+    </div>
+
+    <div class="position-exam">
+        <div class="box bg-gradient-radial-el"> 방사형 그라데이션 (ellipse 균일) </div>
+        <div class="box bg-gradient-radial-el1"> 방사형 그라데이션 (ellipse 불균일) </div>
+        <div class="box bg-gradient-radial-cir"> 방사형 그라데이션 (circle 균일) </div>
+        <div class="box bg-gradient-radial-cir1"> 방사형 그라데이션 (circle 불균일) </div>
+       
+        <div class="box bg-gradient-radial-closest-side"> 방사형 그라데이션 (closest-side) </div>
+        <div class="box bg-gradient-radial-farthest-side"> 방사형 그라데이션 (farthest-side) </div>
+        <div class="box bg-gradient-radial-rp"> 방사형 그라데이션 반복 </div>
+        <div class="box bg-gradient-radial-rp-cir"> 방사형 그라데이션 반복 </div>
+    </div>
+
+
+    <h4>애니메이션</h4>
+    <ul>
+        <li>animation-name → 키 프레임의 이름</li>
+        <li>animation-duration → 애니메이션의 한 사이클이 진행되는 시간</li>
+        <li>animation-timing-function → 애니메이션 진행 속도의 형태</li>
+        <li>animation-iteration-count → 애니메이션의 반복 횟수</li>
+        <li>animation-direction → 애니메이션의 진행 방향</li>
+        <li>animation-play-state → 애니메이션의 진행 또는 일시정지 상태</li>
+        <li>animation-delay → 애니메이션의 시작 전의 대기시간</li>
+        <li>animation-fill-mode → 실행 이전 또는 이후에 애니메이션 효과의 표시 여부</li>
+        <li>animation : animation-* 속성의 일괄 지정</li>
+        <li>
+            키 프레임 : 애니메이션을 구성하는 움직임의 키가 되는 프레임<br/>
+            각 프레임을 연결하여 동작을 완성<br/>
+            @keyframes 규칙 사용<br/>
+            <code>
+            @keyframes 애니메이션이름 {
+                from { 애니메이션의 시작 시점에서 CSS 스타일 } <br/>
+                [ percentage { 해당 중간 시점에서의 CSS 스타일 } <br/>
+                … … ]<br/>
+                to { 애니메이션의 종료 시점에서 CSS 스타일 } <br/>
+                } <br/>
+            </code>
+        </li>
+        <br/>
+        
+    </ul>
+    <div class="position-exam">
+        <div class="box bg-gradient-linear-bt"> 선형 그라데이션(위에서 아래로) </div>
+        <div class="box bg-gradient-linear-rt"> 선형 그라데이션(왼쪽에서 오른쪽으로) </div>
+        <div class="box bg-gradient-linear-btr"> 선형 그라데이션(좌상단에서 우하단으로) </div>
+        <div class="box bg-gradient-linear-btl"> 선형 그라데이션(우상단에서 좌하단으로) </div>
+        <div class="box bg-gradient-linear-many"> 선형 그라데이션(여러색의 균일한 변화) </div>
+        <div class="box bg-gradient-linear-spot"> 선형 그라데이션(여러색의 불균일한 변화) </div>
+        <div class="box bg-gradient-linear-rp"> 선형 그라데이션(위에서 아래로) </div>
+    </div>
+
+    <div class="position-exam">
+        <div class="box bg-gradient-radial-el"> 방사형 그라데이션 (ellipse 균일) </div>
+        <div class="box bg-gradient-radial-el1"> 방사형 그라데이션 (ellipse 불균일) </div>
+        <div class="box bg-gradient-radial-cir"> 방사형 그라데이션 (circle 균일) </div>
+        <div class="box bg-gradient-radial-cir1"> 방사형 그라데이션 (circle 불균일) </div>
+       
+        <div class="box bg-gradient-radial-closest-side"> 방사형 그라데이션 (closest-side) </div>
+        <div class="box bg-gradient-radial-farthest-side"> 방사형 그라데이션 (farthest-side) </div>
+        <div class="box bg-gradient-radial-rp"> 방사형 그라데이션 반복 </div>
+        <div class="box bg-gradient-radial-rp-cir"> 방사형 그라데이션 반복 </div>
     </div>
     
 
