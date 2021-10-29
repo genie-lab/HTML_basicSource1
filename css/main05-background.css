@@ -222,7 +222,7 @@ animation animation-* 속성의 일괄 지정
 .anibox1 { 
         width: 100px; height: 100px;
         background-color: red; position: relative;
-        animation-name: myAnimation;
+        animation-name: myAnimation1;
         animation-duration: 5s;
         animation-timing-function: linear;
         animation-delay: 2s;
