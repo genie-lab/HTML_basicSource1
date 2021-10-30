@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='css/main06-trans.css?ver=1'>
+	<title>변형/전환/카운터/미디어쿼리/반응형웹</title>
+</head>
+<body>
+	<h4>transform</h4><br/>
+	<table>
+		<colgroup>
+				<col style="width: 300px;"/>
+				<col style="width: 500px;"/>
+		</colgroup>
+		<tbody>
+				<tr>
+						<th>transform, 요소의 형태, 크기, 위치를<br/> 변경시키는 효과</th>
+						<td>
+							이동: translate, 회전: rotate, 크기 변경: scale, 기울임: skew
+						</td>
+					</tr>
+					<tr>
+						<th colspan="2">변형 관련 속성</th>
+					</tr>
+					<tr>
+						<th>transform</th>
+						<td>요소에 대해 변형을 적용하기 위한 속성</td>
+						
+					</tr>
+					<tr>
+						<th>transform-origin</th>
+						<td>요소의 변형 기준점을 지정</td>
+					</tr>
+					<tr>
+						<th>transform-style</th>
+						<td>3D 공간에서 변형이 적용된 좌표를 하위
+							요소로 전달하는 방식을 지정</td>
+					</tr>
+					<tr>
+						<th>perspective</th>
+						<td>3D 공간에서 해당 요소와 관측점과의
+							거리를 조절해서 원근감을 지정</td>
+					</tr>
+					<tr>
+						<th>perspective-origin</th>
+						<td>3D 공간에서 원근감의 방향을 지정</td>
+					</tr>
+					<tr>
+						<th>backface-visibility</th>
+						<td>요소 뒷면의 표시 여부를 지정</td>
+					</tr>
+					<tr>
+						<th>transform 속성</th>
+						<td>요소 뒷면의 표시 여부를 지정</td>
+					</tr>
+		</tbody>
+</table><br/>
+	<!--변형이동-->
+	<div class="block">
+		<div class="myTranslate">요소의 이동</div>
+	</div>
+
+	<div class="block">
+		<div class="myScale1">요소의 확대 1:1</div>
+	</div>
+	<div class="block">
+		<div class="myScale2">요소의 확대</div>
+	</div>
+	<div class="block">
+		<div class="myScale3">요소의 축소</div>
+	</div>
+	
+	<div class="block">
+		<div class="myRotate1">요소의 회전 양수 - 시계방향</div>
+	</div>
+	<div class="block">
+		<div class="myRotate2">요소의 회전 음수 - 시계반대방향</div>
+	</div>
+	<div class="block">
+		<div class="myRotateX">요소의 x축 납짝</div>
+	</div>
+	<div class="block">
+		<div class="myRotateY">요소의 y축 납짝</div>
+	</div>
+
+	<div class="block">
+		<div class="mySkewX">요소의 중앙점을 기준으로 좌표축x을 따라 각도만큼 기울임</div>
+	</div>
+	<div class="block">
+		<div class="mySkewY">요소의 중앙점을 기준으로 좌표축 y을 따라 각도만큼 기울임</div>
+	</div>
+	<div class="block">
+		<div class="mySkew">요소의 중앙점을 기준으로 좌표xy축을 따라 각도만큼 기울임</div>
+	</div>
+
+	<hr/>
+<!--transform-origin-->
+	<div class="block">
+		<div class="myOrigin1">transform-origin : left top</div>
+	</div>
+	<div class="block">
+		<div class="myOrigin2">transform-origin : center center</div>
+	</div>
+	<div class="block">
+		<div class="myOrigin3">transform-origin : right top</div>
+	</div>
+	<div class="block">
+		<div class="myOrigin4">transform-origin : left bottom</div>
+	</div>
+	<div class="block">
+		<div class="myOrigin5">transform-origin : right bottom</div>
+	</div>
+
+	<hr/>
+<!--transform-style-->
+	<div class="block">
+		<div id="div1">box1
+			<div id="div2">box2</div>
+		</div>
+	</div>
+	<div class="block">
+		<div id="div3">box1
+			<div id="div4">box2</div>
+		</div>
+	</div>
+</body>
+</html>
