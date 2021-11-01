@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel='stylesheet' type='text/css' media='screen' href='css/main06-trans.css?ver=1'>
-	<title>변형/전환/카운터/미디어쿼리/반응형웹</title>
+	<title>변형/전환/카운터/미디어쿼리</title>
 </head>
 <body>
-	<h4>transform</h4><br/>
+	<h4>transform 변형</h4><br/>
 	<table>
 		<colgroup>
 				<col style="width: 300px;"/>
@@ -115,15 +115,322 @@
 
 	<hr/>
 <!--transform-style-->
-	<div class="block">
-		<div id="div1">box1
-			<div id="div2">box2</div>
-		</div>
+<div class="block">
+	<div id="myTran-flat">flat
+		<div class="myTranBox">box2</div>
 	</div>
-	<div class="block">
-		<div id="div3">box1
-			<div id="div4">box2</div>
-		</div>
+</div>
+<div class="block">
+	<div id="myTran-preserve">preserve
+		<div class="myTranBox">box2</div>
 	</div>
+</div>
+
+<!--perspective, perspective-origin속성-->
+<div class="block" style="height: fit-content;">
+	<div class="myParent1">
+		<div class="myChild">원근속성 none</div>
+	</div>
+	<div class="myParent2">
+		<div class="myChild">원근속성 100px</div>
+	</div>
+	<div class="myParent3">
+		<div class="myChild">원근속성 250px</div>
+	</div>
+	<div class="myParent4">
+		<div class="myChild">원근속성 perspective: none; perspective-origin: 0% 0% </div>
+	</div>
+	<div class="myParent5">
+		<div class="myChild">원근속성 perspective: 100px; perspective-origin: center center</div>
+	</div>
+	<div class="myParent6">
+		<div class="myChild">원근속성 perspective: 250px; perspective-origin: right center</div>
+	</div>
+</div>
+
+<!--backface-visibility 속성-->
+<div class="block" style="height: fit-content;">
+	<div class="mybackface-hidden">요소의 뒷면 hidden</div> 
+	<div class="mybackface-visible">요소의 뒷면 visible</div>
+</div>
+
+
+<h4>transition 전환</h4><br/>
+	<table>
+		<colgroup>
+				<col style="width: 300px;"/>
+				<col style="width: 500px;"/>
+		</colgroup>
+		<tbody>
+				<tr>
+					<th>transition</th>
+					<td>
+						전이, 어떤 이벤트에 대해서 지정한 시간 내에 속성의 특정 상태가 다른 상태로 부드럽게 변화하는 것<br/>
+						스타일의 점진적인 변화 → 애니메이션 효과 부여
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">속성</th>
+				</tr>
+				<tr>
+					<th>transition-property</th>
+					<td> 전환 효과를 부여할 속성의 이름 지정</td>
+					
+				</tr>
+				<tr>
+					<th>transition-duration</th>
+					<td>전환이 진행되는 시간 지정 (0초)</td>
+				</tr>
+				<tr>
+					<th>transition-timing-function</th>
+					<td>전환이 진행되는 속도의 형태 지정</td>
+				</tr>
+				<tr>
+					<th>transition-delay</th>
+					<td>전환이 시작되기 전의 지연 시간 지정</td>
+				</tr>
+				<tr>
+					<th>transition</th>
+					<td>전환 관련 속성의 일괄 지정</td>
+				</tr>
+		</tbody>
+</table><br/>
+
+<!--transition-property, transition-duration 속성-->
+<div class="block" style="height: fit-content;">
+	<div class="myTransition">마우스를 올려놓으면 사각형의 폭이 늘어남</div> 
+</div>
+
+<!--transition-timing-function 속성-->
+<div class="block" style="height: fit-content;">
+	<div class="myTran-attrs-linear">느리게 시작해서 점점 빠르게 진행하다가 후반부에서 다시 느리게 진행 transition-timing-function: linear</div> 
+	<div class="myTran-attrs-ease">처음부터 끝까지 일정한 속도로 진행 transition-timing-function: ease</div> 
+	<div class="myTran-attrs-ease-in">느리게 시작해서 점점 빠르게 진행 transition-timing-function: ease-in</div> 
+	<div class="myTran-attrs-ease-out">빠르게 시작해서 점점 느리게 진행 transition-timing-function: ease-out</div> 
+	<div class="myTran-attrs-ease-in-out">느리게 시작해서 중간까지는 점점 빨라지고 중간부터 끝까지는 점점 느리게 진행 transition-timing-function: ease-in-out</div> 
+</div>
+
+<!--transition 일괄지정-->
+<div class="block" style="height: fit-content;">
+	<div class="myTran-all">transition 일괄지정</div> 
+</div>
+
+<!--변형을 적용한 전환-->
+<div class="block" style="height: fit-content;">
+	<div class="myTransition-apply">회전하면서 크기가 커진다</div> 
+</div>
+
+
+
+<h4>counter 카운터</h4><br/>
+	<table>
+		<colgroup>
+				<col style="width: 300px;"/>
+				<col style="width: 500px;"/>
+		</colgroup>
+		<tbody>
+				<tr>
+					<th>counter</th>
+					<td>
+						CSS가 관리하는 변수
+						CSS 규칙에 따라 값이 자동적으로 증가해서 문서에서의 위치에 따라 콘텐츠의 모양을 조절하는 기능을 제공
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">속성</th>
+				</tr>
+				<tr>
+					<th>content</th>
+					<td>::before와 ::after를 이용해서 특정 요소 앞/뒤에 콘텐츠 추가</td>
+				</tr>
+				<tr>
+					<th>counter-reset</th>
+					<td>하나 이상의 CSS 카운터를 생성/리셋</td>
+				</tr>
+				<tr>
+					<th>counter-increment</th>
+					<td>CSS 변수의 값을 증가/감소</td>
+				</tr>
+				<tr>
+					<th>counter()</th>
+					<td>변수의 값을 콘텐츠로 추가시키는 함수</td>
+				</tr>
+				<tr>
+					<th>counters()</th>
+					<td>요약된 형태의 리스트를 만드는 경우 다른 수준의 중첩된 카운터 사이에 문자열을 추가하는 함수</td>
+				</tr>
+		</tbody>
+</table><br/>
+
+<!--content 속성-->
+<div class="block" style="height: fit-content;">
+	<p class="myContent">가상 요소 ::before와 ::after를 이용하여특정 요소의 앞/뒤에 콘텐츠를 추가할 수 있도록 지정한다</p> 
+	<p class="myContent1">content: url()을 사용한 경우</p> 
+
+	<p class="myContent2" style="color:red"> content: attr(style)</p> 
+	<a href="http://www.knou.ac.kr" class="myContent3">한국방송통신대학교 </a> 
+
+	<p class="quote"> 한국방송통신대학교 </p>
+	<p class="addr">서울시 종로구 대학로 86</p>
+</div>
+
+<!--counter 관련 속성-->
+<div class="block chapter" style="height: fit-content;">
+	<h1>HTML5</h1>
+	<h2>Overview</h2>
+	<h2>Elements</h2>
+	<h1>CSS3</h1>
+	<h2>Overview</h2>
+	<h2>Properties</h2>
+	<h1>Javascripts</h1>
+	<h2>Overview</h2>
+	<h2>Functions</h2>
+</div>
+
+<!--미디어쿼리 속성-->
+<h4>--미디어쿼리</h4><br/>
+	<table>
+		<colgroup>
+				<col style="width: 300px;"/>
+				<col style="width: 500px;"/>
+		</colgroup>
+		<tbody>
+				<tr>
+					<th>미디어쿼리</th>
+					<td>
+						같은 스타일시트 내에서 서로 다른 미디어에 다른 스타일을 적용하기 위한 것
+						CSS3 미디어 쿼리<br/>
+						미디어 타입 + 미디어 타입의 특성<br/>
+						all → 모든 유형의 미디어 장치<br/>
+						print → 프린터<br/>
+						screen → 컴퓨터 스크린, 태블릿, 스마트폰 등<br/>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">미디어특성</th>
+				</tr>
+				<tr>
+					<th>width(max- , min-)</th>
+					<td>출력 장치의 대상 표시 영역(뷰포트)의 폭</td>
+				</tr>
+				<tr>
+					<th>height(max- , min-)</th>
+					<td>출력 장치의 대상 표시 영역의 높이</td>
+				</tr>
+				<tr>
+					<th>device-width(max- , min-)</th>
+					<td>출력 장치가 제공하는 기본적인 폭</td>
+				</tr>
+				<tr>
+					<th>device-height(max- , min-)</th>
+					<td>출력 장치가 제공하는 기본적인 높이</td>
+				</tr>
+				<tr>
+					<th>orientation</th>
+					<td>화면의 가로 방향(landscape)과 세로 방향(portrait)</td>
+				</tr>
+				<tr>
+					<th>aspect-ratio(max-, min-)</th>
+					<td>화면 종횡비(width와 height의 비율)</td>
+				</tr>
+				<tr>
+					<th>device-aspect-ratio(max-, min-)</th>
+					<td>출력 장치 디스플레이의 물리적인 화면 비율(device-width와 device-height의 비율)</td>
+				</tr>
+				<tr>
+					<th>color(max-, min-)</th>
+					<td>출력 장치의 색 성분에 할당되는 비트 수</td>
+				</tr>
+				<tr>
+					<th>color-index(max-, min-)</th>
+					<td>출력 장치의 색상 룩업 테이블에 있는 전체 색상 수</td>
+				</tr>
+				<tr>
+					<th>resolution(max-, min-)</th>
+					<td>출력 장치의 해상도</td>
+				</tr>
+				<tr>
+					<th>scan</th>
+					<td>TV 미디어의 화면 주사 방식(순차 주사 progressive, 비월주사 interlace)</td>
+				</tr>
+				<tr>
+					<th>grid</th>
+					<td>출력 장치가 그리드인지 비트맵인지를 표시</td>
+				</tr>
+		</tbody>
+</table><br/>
+
+<!--@media only screen and ( min-width: 480px ) 문법 -->
+<div class="mediaBox">
+	<span>css 주석 풀어서 확인하기!!</span>
+</div>
+
+<!--orientation: landscape-->
+<div class="mediaBlock-portrait">
+	<p >브라우저 창의 크기를 조절해보세요 portrait(가로/세로 1보다 작으면)이면 핑크색이 되고
+	   landscape(가로/세로 1보다 크면) 아쿠아색이 됩니다
+	</p>
+</div>
+<div class="mediaBlock-landscape">
+	<p >브라우저 창의 크기를 조절해보세요 portrait(가로/세로 1보다 작으면)이면 핑크색이 되고
+	   landscape(가로/세로 1보다 크면) 아쿠아색이 됩니다
+	</p>
+</div>
+
+
+
+
+<!--반응형웹 속성-->
+<h4>반응형웹</h4><br/>
+	<table>
+		<colgroup>
+				<col style="width: 300px;"/>
+				<col style="width: 500px;"/>
+		</colgroup>
+		<tbody>
+				<tr>
+					<th>반응형 웹디자인 RWD: responsive web design</th>
+					<td>
+						하나의 웹사이트가 다양한 크기와 특성을 갖는 장치에<br/>
+						가장 적합한 형태로 표시되도록 웹페이지를 제작하는 것<br/>
+						사용자가 어떤 장치를 사용하여 웹사이트에 접속하는가에 동적으로<br/>
+						반응하여 해당 장치에 최적화된 형태로 디자인을 변경할 수 있도록 설계<br/>
+						반응형 웹의 구현 → HTML과 CSS만 이용
+						관련 기술 -> 뷰포트 메타 태그 / 유동적 레이아웃 / 미디어 쿼리
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2">특성</th>
+				</tr>
+				<tr>
+					<th>viewport</th>
+					<td>브라우저를 통해 사용자가 볼 수 있는 웹페이지 영역<br/>
+						→ 각 장치의 모니터와 뷰포트에 맞춰 웹페이지의 콘텐츠 폭의 조정이 필요
+						<code>&lt;meta name="viewport"
+						content="width=device-width,initial-scale=1.0"&gt;</code><br/>
+						content="width=device-width: 페이지의 폭 = 장치의 스크린 폭	
+						initial-scale=1.0 : 브라우저에 의해서 페이지가 처음 로드될 때의 초기 배율
+					</td>
+				</tr>
+				<tr>
+					<th>유동적 레이아웃</th>
+					<td>그리드 개념에 기반하여 고정된 픽셀 크기가 아닌
+						화면에 따른 비율로 콘텐츠의 크기를 정의하는 것<br/>
+						그리드 개념 → 웹페이지를 여러 개의 열로 구분<br/>
+						브라우저 창의 크기에 따라 콘텐츠의 크기도 이에 비례하여 조정</td>
+				</tr>
+				<tr>
+					<th>보통 12개의 열을 가진 그리드 뷰 사용</th>
+					<td>출력 장치가 제공하는 기본적인 폭</td>
+				</tr>
+				<tr>
+					<th>device-height(max- , min-)</th>
+					<td>모든 콘텐츠의 크기는 열의 크기의 정수배로 표현<br/>
+						• 각 열의 폭 = 100% / 12열 = 8.33%</td>
+				</tr>
+		</tbody>
+</table><br/>
+
+
 </body>
 </html>

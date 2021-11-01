@@ -1,0 +1,97 @@
+*:not(h1,h2) { margin: 0; outline: none;  font-size: 10pt; text-decoration-line: none;  color: rgb(70, 70, 70); box-sizing: border-box; }
+
+/*보통 12개의 열을 가진 그리드 뷰 사용 콘텐츠 크기 지정을 위한 속성*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+/* 각 클래스에 공통으로 적용되는 속성 */
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+  }
+
+/********************************************************************/
+
+.header {
+    background-color: #9ACD32; }
+.content {
+    background-color: #F5F5DC; } 
+.sidebar {
+    background-color: #E0FFFF; } 
+.footer {
+    clear: both;
+    background-color: #B0C4DE; } 
+
+
+/*데스트탑 기준 */
+/*650px까지는 아래 적용*/
+@media only screen and (max-width: 650px) {  
+    /* 모바일 폰 */
+    [class*="col-"] { width: 100%; }
+}
+
+
+/*모바일 기준 */
+/* [class*="col-"] {
+    width: 100%;
+} */
+/*650px이상부터 아래 적용*/
+/* @media only screen and (min-width: 650px) { 
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+} */
+
+
+img { width: 100%; height: auto }
+/*배경 이미지에 대한 반응적인 동작을 지정하려면
+ background-size 속성 사용
+ →이미지의크기가콘텐츠 영역에 맞춰지도록조정됨→ 종횡비유지
+ 선택자 { background-size: contain }
+ →이미지의크기가 전체 콘텐츠영역에채워지도록조정됨
+ 선택자 { background-size: 100% 100% }
+ →이미지의크기가전체 콘텐츠 영역에채워지도록 조정됨
+ → 종횡비는유지되지만이미지의일부가잘릴 수 있음
+*/
+.resImage1 { width: 100%; height: 100px;
+    border: 1px solid red;
+    background-image: url('../img/sun.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+    }
+.resImage2 { width: 100%; height: 100px;
+    border: 1px solid red;
+    background-image: url('../img/sun.jpg');
+    background-repeat: no-repeat;
+    background-size: contain ;
+    }
+.resImage3 { width: 100%; height: 100px;
+    border: 1px solid red;
+    background-image: url('../img/sun.jpg');
+    background-repeat: no-repeat;
+    background-size: cover ;
+    }
+
+table, th, td { border-collapse: collapse; border-spacing: 0; border: 1px solid slateblue; padding:10px;}
+tr:nth-child(odd){ background-color: #eaf8c8; } /*동일한 부모 요소 안에서 n번째 자식 요소 선택*/

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' type='text/css' media='screen' href='css/responsive.css?ver=1'>
+	<title>반응형웹</title>
+</head>
+<body>
+	<div class="col-12 header"> <h1>반응형 웹</h1> </div>
+	<div class="col-6 content">
+	<h1>개념</h1> <p>RWD란 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate ea maiores saepe, hic nemo? Perferendis, debitis repellendus voluptatem delectus consectetur hic aliquid reprehenderit expedita sunt voluptatum quas maiores! Quidem. </p> <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate debitis quos quo eum dolores vel mollitia dignissimos expedita illum consequuntur nulla repudiandae molestiae nam laboriosam, quasi, praesentium omnis enim pariatur. </p> </div>
+	<div class="col-3 sidebar"> 
+		<p>이미지 확대/축소</p>
+		<img src="./img/flower.jpg" width="500" height="330">
+		<div class="resImage1"></div>
+		<div class="resImage2"></div>
+		<div class="resImage3"></div>
+	</div>
+	<div class="col-3 sidebar"> 
+		<ul> 
+			<li>하나</li>
+			<li>둘</li>
+			<li>셋</li>
+			<li>넷</li>
+		</ul> 
+	</div>
+	<div class="col-9"> 
+		<!-- picture 요소 하나 이상의 이미지를 지정해서 장치/뷰포트의 크기에 따라
+			서로 다른 이미지를 표시할 때 주로 사용	-->
+		<picture>
+			<source media="(min-width: 800px)" srcset="./img/lion.jpg"><!--800px ~-->
+			<source media="(min-width: 650px)" srcset="./img/moon.jpg"><!--650 ~ 800px-->
+			<source media="(min-width: 500px)" srcset="./img/sun.jpg"><!--500 ~ 650px-->
+			<img src="./img/flower.jpg" alt="기본 이미지">
+		</picture>
+	</div>
+
+	<div class="col-9"> 
+		<!--반응적 글자크기	
+		웹페이지의 글자 크기를 반응적으로 만들려면
+		글자 크기 지정 단위로서 'vw (viewport width)' 사용
+		• 1vw = 뷰포트 폭의 1% -->
+		<h1 style="font-size:10vw;">반응적 글자 크기</h1>
+		<p style="font-size: 5vw;"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci? Itaque omnis aliquam ipsa autem nostrum sunt voluptatibus quod reprehenderit ipsam aut impedit ratione, alias ea ipsum iste, numquam error. </p>
+	</div>
+
+	<div class="col-9"> 
+		<!--반응적 테이블	
+		테이블 내용을 표시할 수 없을 정도로 창의 크기가 작은 경우 수평 스크롤바를 지정 style="overflow-x:auto;" -->
+		<div style="overflow-x:auto;">
+			<table>
+
+				<tr>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					<td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, adipisci?</td>
+					
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="col-12 footer"> 한국방송통신대학교 </div>
+
+
+</body>
+</html>
