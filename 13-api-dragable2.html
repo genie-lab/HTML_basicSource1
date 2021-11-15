@@ -8,41 +8,82 @@
     <title>HTML 5,6강</title>
 </head>
 <body>
-  <header>
-       <!------------------------------- 목차 --------------------------------->
-  </header>
 
 
   <main>
-    <!-------------------------------드레그 --------------------------------->
-  
+    <!-------------------------------드레그인 드롭2 --------------------------------->
+    
+
+    <table>
+      <tr>
+        <td>
+          <img src="./img/drag-3.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-4.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-5.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-6.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-7.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-8.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-9.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="position-exam">
+            <div id="div3" class="box1" ondrop="drop1(event)" ondragover="dragover1(event)" >
+                <img id="img" src="./img/moon.jpg" width=100 height=100 
+                draggable="true" 
+                ondragstart="dragstart1(event)">
+            </div>
+            <div id="div4"  class="box2"
+                ondrop="drop1(event)"
+                ondragover="dragover1(event)">
+            </div>
+          </div>
+        </td>
+      </tr>
+      
+    </table>
 
     <!-- ondrop / ondragover -->
-    <div class="position-exam">
-      <div id="div3" class="box1" ondrop="drop1(event)" ondragover="dragover1(event)" >
-          <img id="img" src="./img/moon.jpg" width=100 height=100 
-          draggable="true" 
-          ondragstart="dragstart1(event)">
-      </div>
-      <div id="div4"  class="box2"
-          ondrop="drop1(event)"
-          ondragover="dragover1(event)">
-      </div>    
-    </div>
+    
     <script>
       function dragstart1(e) {
         e.dataTransfer.setData("text", e.target.id);
         // 커서이동시 효과지정
-        // e.dataTransfer.effectAllowed = "link"; //move,copy,link
-        //포인터 이미지 추가
-        // var icon = document.createElement("img");
-        // icon.src = "./img/orange.png";
-        // event.dataTransfer.setDragImage( icon, 0, 0 );
+        e.dataTransfer.effectAllowed = "link"; //move,copy,link
+        // 포인터 이미지 추가
+        var icon = document.createElement("img");
+        icon.src = "./img/orange.png";
+        event.dataTransfer.setDragImage( icon, 0, 0 );
       }
       function dragover1(e) { 
         e.preventDefault(); 
         // 커서이동시 효과지정
-        // e.dataTransfer.dropEffect = "link"; //move,copy,link
+        e.dataTransfer.dropEffect = "link"; //move,copy,link
       }
       function drop1(e) {
         e.preventDefault();
@@ -60,7 +101,6 @@
 
 </main>  
 
-   <!-- 홈으로 가는 버튼 -->
-   <a class="no-underline" href="#audio-tag"><div class="box">home</div></a>
+  
 </body>
 </html>

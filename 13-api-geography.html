@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <title>HTML worker</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td><input type="button" onclick="getLocation()" style="width: 100px; display: inline-block; margin:20px" value="위치 얻기"></td>
+      <td><span id="result"></span></td>
+    </tr>
+  </table>
+  
+  <script>
+    var pos = document.getElementById("result");
+    function getLocation() {
+      // 현재 위치 정보 얻기
+      if ( navigator.geolocation ) {
+        options = { enableHighAccuracy: true, timeout: 1500, maximumAge: 5000 };
+        navigator.geolocation.getCurrentPosition(myPosition, showError, options);
+      }else {
+        pos.innerHTML = "Geolocation을 지원하지 않습니다.";
+      }
+    }
+
+    function myPosition(position) {
+      // 획득한 위치 정보 출력
+      var now = new Date(position.timestamp);
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      var acc = position.coords.accuracy;
+      var msg = "현재 시간: " + now.toLocaleString() + "<br>" +
+      "현재 위치 (위도 : " + lat + " 경도 : " + lng + ")<br>" +
+      "정확도 : " + acc + "m<br>";
+      pos.innerHTML = msg;
+    }
+
+
+    function showError(error) {
+      switch ( error.code ) {
+        case  error.PERMISSION_DENIED :
+              pos.innerHTML = "권한이 없습니다."; break;
+        case  error.POSITION_UNAVAILABLE :
+              pos.innerHTML = "위치 정보를 구할 수 없습니다."; break;
+        case  error.TIMEOUT :
+              pos.innerHTML = "제한 시간을 초과하였습니다."; break;
+        case  error.UNKNOWN_ERROR :
+              pos.innerHTML = "알 수 없는 오류가 발생하였습니다."; break;
+        default : pos.innerHTML = error.message;
+      }
+    }
+
+  </script>
+
+  </body>
+
+</html>

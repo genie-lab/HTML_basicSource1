@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <title>HTML worker</title>
+</head>
+<body>
+  
+  <!--//watchPosition() 메서드-->
+  <!--watchPosition() 메서드는 장치의 위치가 바뀔 때마다 자동으로 호출할 처리기 함수를 등록할 때 사용합니다.-->
+  <table>
+    <tr>
+      <td>
+        <input type="button" onclick="PositionStart()" style="width: 100px; display: inline-block; margin:20px"  value="위치 추적 시작">
+        <input type="button" onclick="PositionStop()"  style="width: 100px; display: inline-block; margin:20px"  value="위치 추적 정지">
+      </td>
+      <td>
+        <span id="watchResult"></span>
+      </td>
+    </tr>
+  </table>
+  
+
+  <script>
+    var watchId;
+    function PositionStart() { 
+      if ( navigator.geolocation ) {
+        watchId = navigator.geolocation.watchPosition(myPosition);
+        console.log('PositionStart : watchId',watchId)
+      }
+     }
+    function myPosition(position) { 
+      document.getElementById("watchResult").innerHTML =
+      "현재 위치 (위도 : " + position.coords.latitude +
+      ", 경도 : " + position.coords.longitude + ")"
+    }
+    function PositionStop() { 
+      navigator.geolocation.clearWatch(watchId);
+      console.log('PositionStop : watchId', watchId);
+
+     }
+  </script>
+  </body>
+
+</html>

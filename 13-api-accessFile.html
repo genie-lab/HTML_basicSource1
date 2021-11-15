@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    
+    <title>HTML storage</title>
+</head>
+<body>
+  <header>
+       <!------------------------------- 목차 --------------------------------->
+  </header>
+
+
+  <main>
+    <table>
+      <tr>
+        <td>
+          <div>
+            <span>[ 파일업로드 ]</span>
+            <input id="file" type="file" onchange="fileInfo();" style="width: 200px; display: inline-block; margin-left: 20px; "><br><br>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <table id="table" ></table>
+
+    
+    <script>
+    function fileInfo() {
+      var file = document.getElementById("file").files[0];
+      document.getElementById("table").innerHTML =
+      "<tr><td>파일 이름</td><td>" + file.name + "</td></tr>" +
+      "<tr><td>파일 이름</td><td>" + file.size + "</td></tr>"+
+      "<tr><td>파일 이름</td><td>" + file.type + "</td></tr>"+
+      "<tr><td>파일 이름</td><td>" + file.lastModifiedDate.toLocaleDateString() + "</td></tr>";
+    }
+    </script>
+
+    <!--인풋타입-->
+    <table>
+      <tr>
+        <td><input id="fileRead" type="file" onchange="fileRead();"></td>
+      </tr>
+      <tr>
+        <td><textarea id="content" readonly style="width:700px; height:400px;">링크파일 보여지는 곳</textarea></td>
+      </tr>
+    </table>
+    
+    <script>
+      function fileRead() {
+        var file = document.getElementById("fileRead").files[0];
+        var view = document.getElementById("content");
+        var reader = new FileReader();
+        reader.readAsText(file, "utf-8");
+        reader.onload = function() {
+        view.textContent = reader.result; };
+        reader.onerror = function(event) { 
+          switch(event.target.error.code) {
+            case error.NOT_FOUND_ERR:
+            alert("읽을 파일을 찾지 못하였습니다."); break;
+            case error.SECURITY_ERR:
+            alert("보안상 안전하지 않습니다."); break;
+            case error.ABORT_ERR: alert(" → 데이터 읽기가 중단되었습니다 "); break;
+            case error.NOT_READABLE_ERR: alert(" 파일 권한 등으로 인해 파일에 접근할 수 없습니다 "); break;
+            case error.ENCODING_ERR: alert(" Data URL 길이가 URL 길이의 상한을 초과한 경우 ");
+          }
+        } 
+      }
+      
+    </script>
+
+
+    <!-- 드래그인드롭-->
+    <table>
+      <tr>
+        <td>
+          이곳에 파일을 드롭해 주세요
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <textarea id="dragContent" readonly
+            placeholder="이곳에 파일을 드롭해 주세요"
+            ondrop="dropFile(event)"
+            ondragover="cancelDefault(event)"
+            ondragenter="cancelDefault(event)"
+            style="width:700px; height:400px;">
+          </textarea>
+        </td>
+      </tr>
+    </table>
+    
+
+    <script>
+      function cancelDefault(event) {
+        event.preventDefault();
+      }
+
+      function dropFile(event) {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        var view = document.getElementById("dragContent");
+        var reader = new FileReader();
+        reader.readAsText(file, "utf-8");
+
+        reader.onload = function() {
+          view.textContent = reader.result;
+        }
+
+      }
+
+    </script>
+
+</main>  
+
+  </body>
+
+</html>

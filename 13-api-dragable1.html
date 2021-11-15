@@ -8,30 +8,46 @@
     <title>HTML 5,6강</title>
 </head>
 <body>
-  <header>
-       <!------------------------------- 목차 --------------------------------->
-  </header>
-
+ 
 
   <main>
-    <!-------------------------------드레그 --------------------------------->
+    <!-------------------------------드레그인 드롭1 --------------------------------->
     
     <!-- 전역 속성 draggable → true |false   어떤 객체도 드래그 가능 -->
-    <img id="image" src="./img/lion.jpg" width="150" draggable="true">
-    <p draggable="true">방송대 컴퓨터과학과</p>
     
-    
-    <div class="position-exam">
-      <div id="div1" class="box1" >
-          <img id="img" src="./img/lion.jpg" width=100 height=100 
-            draggable="true" 
-            ondragstart="dragstart(event)">
-      </div>
-      <div id="div2" class="box2"  
-          ondrop="drop(event)"
-          ondragover="dragover(event)">
-      </div>
-    </div>
+    <table>
+      <tr>
+        <td>
+          <img src="./img/drag-1.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="./img/drag-2.PNG" width="500"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img id="image" src="./img/lion.jpg" width="150" draggable="true">
+          <p draggable="true">방송대 컴퓨터과학과</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="position-exam">
+            <div id="div1" class="box1" >
+                <img id="img" src="./img/lion.jpg" width=100 height=100 
+                  draggable="true" 
+                  ondragstart="dragstart(event)">
+            </div>
+            <div id="div2" class="box2"  
+                ondrop="drop(event)"
+                ondragover="dragover(event)">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
 
     <script>
       function dragstart(event) {
@@ -48,6 +64,7 @@
     </script>
 
 
+    
 
 
     
@@ -56,7 +73,5 @@
 
 </main>  
 
-   <!-- 홈으로 가는 버튼 -->
-   <a class="no-underline" href="#audio-tag"><div class="box">home</div></a>
 </body>
 </html>

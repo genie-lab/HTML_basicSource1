@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"> -->
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+    <!-- //Google Maps Javascript API 로드-->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <title>HTML worker</title>
+</head>
+<body>
+  
+  <table>
+    <tr>
+      <td>
+        <input type="button" onclick="getLocation()" style="width: 100px; display: inline-block; margin:20px"  value="현재 위치는?">
+      </td>
+  </tr>
+    <tr>
+      <td>
+        <div id="map" style="width: 500px; height: 500px"></div>
+      </td>
+  </tr>
+  </table>
+  
+  
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(myPosition);
+      }
+    }
+
+    function myPosition(position) {
+        var myLatLng = { lat: position.coords.latitude, lng: position.coords.longitude };
+        //지도의 옵션을 지정: 줌 레벨, 중심 위치, 지도 유형
+        var mapOptions = {
+                            zoom: 15,
+                            center: myLatLng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                          };
+        //주어진 옵션에 따라 지도 출력                  
+        var map = new google.maps.Map( document.getElementById('map'), mapOptions );    
+        
+        //지도 위에 마커 설정을 위한 옵션 지정
+        var markerOptions = { 
+                            position: myLatLng,
+                            map: map,
+                            title: '현재위치'
+                          };
+        //마커 옵션에 따라 마커 출력
+        var marker = new google.maps.Marker(markerOptions);  
+        console.log('marker',marker);                  
+    } 
+  </script>
+
+
+
+</body>
+
+</html>

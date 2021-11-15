@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <title>HTML worker</title>
+</head>
+<body>
+  값 입력 :<input type="text" id="num">
+  <button type="button" id="start" >카운트 실행</button>
+  <button type="button" id="stop" >카운트 중지</button>
+  <div><span id="result"></span></div><br>
+  <script>
+
+    var worker;
+    document.getElementById('start').addEventListener('click',start);
+    document.getElementById('stop').addEventListener('click',stop);
+
+    function start() {
+
+      var num = document.getElementById("num").value;
+
+    if ( typeof(Worker) !== "undefined" ) { 
+
+      //워커 생성 및 처리
+      var worker = new SharedWorker("count.js", "share");
+
+      // 데이터 전달
+      worker.port.postMessage(num);
+
+      // 받은 데이터
+      worker.port.onmessage = function(event) { 
+        // 데이터 처리
+        document.getElementById("result").innerHTML
+        = "1부터 " + num + "까지의 합은 " + event.data;
+      }
+
+      // 오류처리
+      worker.onerror = function(event){ 
+        // 오류 처리
+        var err_msg = event.filename + "의 " +
+        event.lineno + "번째 줄에서 오류 (" +
+        event.message + ") 가 발생했습니다.";
+        alert(err_msg);
+      }
+     }
+    else { 
+      //웹 워커 미지원 메시지 출력
+      console.log('워커 미지원');
+     }
+    }
+    function stop() { 
+
+      //워커 종료
+      worker.port.terminate();
+    }
+
+
+    if(window!=self){
+      start();
+    }
+
+  </script>
+
+  </body>
+
+</html>

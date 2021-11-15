@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <script>
+      window.onload = function() {
+        if ( window.localStorage ) {
+          localStorage.setItem("HTML5", "4");
+          localStorage.algorithms = "3";
+          localStorage["data structures"] = "2";
+        }
+      }
+    </script>
+    
+    <title>HTML storage</title>
+</head>
+<body>
+  <header>
+       <!------------------------------- 목차 --------------------------------->
+  </header>
+
+
+  <main>
+    <!--텍스트 편집속성 기존에 편집이 불가능했던 요소들까지도 편집 가능 -->
+    <h4>로컬스토리지에서 모든 데이터 읽기</h4>
+    <textarea id="result" cols="45" rows="5"></textarea><br/>
+    <button type="button" id="del">데이터 삭제</button>
+    <script>
+      window.onload = function() {
+        if ( window.localStorage ) {
+          data = document.getElementById("result");
+          data.value = "";
+          for (var i=0; i<localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key); //localStorage.key; ,localStorage[key];
+            data.value += "("+ key + ","+ value + ")" + " ";
+          }
+        }
+      }
+
+      document.getElementById('del').addEventListener('click',del,false);
+      function del(){
+        if(window.localStorage){
+          for(var i=0; i<localStorage.length; i++){
+            var key = localStorage.key(i);
+            localStorage.removeItem(key); //delete localStorage.key;, delete localStorage[key];
+          }
+          data = document.getElementById("result");
+          data.value = "";
+          alert('삭제되었습니다');
+        }
+      }
+    </script>
+
+</main>  
+
+    
+  </body>
+
+</html>

@@ -31,13 +31,22 @@
     <!-- 중요 contenteditable 속성과 designMode 속성으로 편집모드로 지정한 상태에서 
       execCommand()메소드를 사용하면 이와같은 간단한 편집기도 만들수 있다.  -->
     <div id="menu">
-      <input type="button" value="굵게" onclick="setBold();">
-      <input type="button" value="기울게" onclick="setItalic();">
-      … 
-      <input type="button" value="이미지 삽입" 
-      onclick="insertImage()">
-      </div><br>
-      <div id="editor" contenteditable></div>
+      <table style="padding: 0;">
+        <tr>
+          <td><button type="button" style="width: 100%; " onclick="setBold();">굵게</button></td>
+          <td><button type="button" onclick="setItalic();">기울게</button></td>
+          <td><button type="button" onclick="insertImage()">이미지 삽입</button></td>
+        </tr>
+        <tr>
+          <td colspan="3"><div id="editor" contenteditable style="border: 1px solid red; text-align:left;"></div></td>
+        </tr>
+      </table>
+      
+      
+      
+    </div>
+      <br>
+      
       
       <script>
         window.onload = function() {
@@ -49,7 +58,7 @@
         function setBold() { document.execCommand("bold"); }
         function setItalic() { document.execCommand("italic"); }
         function insertImage() { 
-        document.execCommand("insertImage", true, "./img/ornagme.png"); 
+        document.execCommand("insertImage", true, "./img/orange.png"); 
         }
       </script>
 
