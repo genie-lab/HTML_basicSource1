@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <title>HTML 5,6강</title>
+</head>
+<body>
+  <header>
+       <!------------------------------- 목차 --------------------------------->
+  </header>
+
+
+  <main>
+    <!-------------------------------드레그 --------------------------------->
+  
+
+    <!-- ondrop / ondragover -->
+    <div class="position-exam">
+      <div id="div3" class="box1" ondrop="drop1(event)" ondragover="dragover1(event)" >
+          <img id="img" src="./img/moon.jpg" width=100 height=100 
+          draggable="true" 
+          ondragstart="dragstart1(event)">
+      </div>
+      <div id="div4"  class="box2"
+          ondrop="drop1(event)"
+          ondragover="dragover1(event)">
+      </div>    
+    </div>
+    <script>
+      function dragstart1(e) {
+        e.dataTransfer.setData("text", e.target.id);
+        // 커서이동시 효과지정
+        // e.dataTransfer.effectAllowed = "link"; //move,copy,link
+        //포인터 이미지 추가
+        // var icon = document.createElement("img");
+        // icon.src = "./img/orange.png";
+        // event.dataTransfer.setDragImage( icon, 0, 0 );
+      }
+      function dragover1(e) { 
+        e.preventDefault(); 
+        // 커서이동시 효과지정
+        // e.dataTransfer.dropEffect = "link"; //move,copy,link
+      }
+      function drop1(e) {
+        e.preventDefault();
+        const result = e.dataTransfer.getData("text");
+        console.log('e.target',e.target);
+        console.log(document.getElementById(result));
+        e.target.appendChild(document.getElementById(result));
+      }
+    </script>
+
+
+    
+
+
+
+</main>  
+
+   <!-- 홈으로 가는 버튼 -->
+   <a class="no-underline" href="#audio-tag"><div class="box">home</div></a>
+</body>
+</html>

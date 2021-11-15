@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07-api-2.css'>
+    <!-- <script>
+      window.onload = function() {
+        if ( window.localStorage ) {
+          localStorage.setItem("HTML5", "4");
+          localStorage.algorithms = "3";
+          localStorage["data structures"] = "2";
+        }
+      }
+    </script> -->
+    <script>
+      window.onload = function() {
+        if ( window.localStorage ) {
+          data = document.getElementById("result");
+          data.value = "";
+          for (var i=0; i<localStorage.length; i++) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            data.value += "("+ key + ","+ value + ")" + " ";
+          }
+        }
+      }
+    </script>
+    <title>HTML 5,6강</title>
+</head>
+<body>
+  <header>
+       <!------------------------------- 목차 --------------------------------->
+  </header>
+
+
+  <main>
+    <!--텍스트 편집속성 기존에 편집이 불가능했던 요소들까지도 편집 가능 -->
+    <h2>로컬스토리지에서 모든 데이터 읽기</h2>
+    <textarea id="result" cols="45" rows="5"></textarea>
+
+
+    과목<input type="text" id="key"> 학년<input type="text" id="data">
+
+    
+    <script>
+      var key = document.getElementById("key"); //과목
+      var data = document.getElementById("data"); //학년
+
+      function storeData() { // 저장
+        if ( window.localStorage ) {
+          if ( key.value !== "" ) {
+            localStorage.setItem(key.value, data.value);
+            alert("데이터 저장이 완료되었습니다.");
+            updateView();
+          }
+        }
+      }
+
+      function removeOne() { // 하나 삭제
+        localStorage.removeItem(key.value);
+        updateView();
+      }
+
+      function retrieveData() { // 검색
+        if ( window.localStorage ) {
+          if ( key.value !== "") {
+            var value = localStorage.getItem(key.value);
+            if ( value != null )
+              data.value = value;
+            else {
+              alert("조회한 " + key.value + "의 데이터는 존재하지 않음");
+            }
+          }
+        }
+      }
+
+      function removeAll() { // 모두 삭제
+        var answer = confirm ("모든 데이터를 삭제할까요?");
+        if ( answer ) {
+          localStorage.clear();
+          alert("모든 데이터를 삭제하였습니다.");
+          updateView();
+        }
+      }
+
+      function updateView() { // 모든 데이터 표시
+        var str = "";
+        for ( var i = 0, len = localStorage.length; i < len; i++ ) {
+          var _key = localStorage.key(i);
+          var value = localStorage.getItem(_key);
+          str += "("+ _key + ","+ value + ")" + "<br />";
+        }
+        document.getElementById("result").innerHTML = str;
+        key.value = "";
+        data.value = "";
+      }
+
+    </script>
+    <button type="button" id="clickNum">클릭하세요</button>
+    <p id="count" ></p>
+    <script>
+
+      document.getElementById('clickNum').addEventListener('click', clickCounter, false);
+
+      function clickCounter() {
+        
+        let str = '';
+        if (typeof(Storage) !== "undefined") {
+          // local
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          str = `(로컬스토리지) 지금까지 클릭한 횟수 : ${localStorage.clickcount} 회    `;
+
+          // session
+          if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+          } else {
+            sessionStorage.clickcount = 1;
+          }
+
+          str += `(세션스토리지) 지금까지 클릭한 횟수 : ${sessionStorage.clickcount} 회   `;
+          console.log('str', str);
+          document.getElementById("count").innerHTML = str;
+
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+
+      }
+
+
+
+     
+    </script>
+    <p id="event"></p>
+    <script>
+       window.addEventListener("storage", storageListener, false);
+      function storageListener(e) {
+        evt_msg = document.getElementById("event");
+        evt_msg.innerHTML = "키 : " + e.key + " <br>" +
+          "이전 값: " + e.oldValue + " 이 새로운 값 " 
+          + e.newValue + " 로 변경.<br>" +
+          "이벤트가 발생한 웹 문서 : " +e. url + "<br>" +
+          "스토리지 객체 : " + e.storageArea;
+          console.log(evt_mgs);
+          
+        updateView();
+      }
+    </script>
+</main>  
+
+    
+  </body>
+
+</html>
